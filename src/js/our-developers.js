@@ -1,7 +1,11 @@
 console.log("Будуэмо розмітку");
 
 //!❌ Рішення-1: з new URL(...)(динамічний шлях без явного import ):
-const imgUrl = (relPath) => new URL(relPath, import.meta.url).href;
+// const imgUrl = (relPath) => new URL(relPath, import.meta.url).href;
+function imgUrl(relPath) {
+    return new URL(relPath, import.meta.url).href;
+};
+// new URL("../images/symboldefs.svg#instagram", import.meta.url).href,
 
 //! Рішення-2:
 import olgaDesktop1x from "../images/olga-desktop-1x.jpg";
@@ -70,10 +74,10 @@ const dataDevelopersList = [
             default: olgaMobile1x
         },
         icons: [
-            new URL('../images/symboldefs.svg#instagram', import.meta.url).href,
-            "./images/symboldefs.svg#twitter",
-            "./images/symboldefs.svg#facebook",
-            "./images/symboldefs.svg#linkedin"
+            new URL("../images/symboldefs.svg#instagram", import.meta.url).href,
+            new URL("../images/symboldefs.svg#twitter", import.meta.url).href,
+            new URL("../images/symboldefs.svg#facebook", import.meta.url).href,
+            new URL("../images/symboldefs.svg#linkedin", import.meta.url).href
         ]
     },
     {
@@ -81,27 +85,27 @@ const dataDevelopersList = [
         position: "Marketing",
         images: {
             desktop: [
-                "./images/mykola-desktop-1x.jpg",
-                "./images/mykola-desktop-2x.jpg",
-                "./images/mykola-desktop-3x.jpg"
+                new URL("../images/mykola-desktop-1x.jpg", import.meta.url).href,
+                new URL("../images/mykola-desktop-2x.jpg", import.meta.url).href,
+                new URL("../images/mykola-desktop-3x.jpg", import.meta.url).href
             ],
             tablet: [
-                "./images/mykola-tablet-1x.jpg",
-                "./images/mykola-tablet-2x.jpg",
-                "./images/mykola-tablet-3x.jpg"
+                new URL("../images/mykola-tablet-1x.jpg", import.meta.url).href,
+                new URL("../images/mykola-tablet-2x.jpg", import.meta.url).href,
+                new URL("../images/mykola-tablet-3x.jpg", import.meta.url).href
             ],
             mobile: [
-                "./images/mykola-mobile-1x.jpg",
-                "./images/mykola-mobile-2x.jpg",
-                "./images/mykola-mobile-3x.jpg",
+                new URL("../images/mykola-mobile-1x.jpg", import.meta.url).href,
+                new URL("../images/mykola-mobile-2x.jpg", import.meta.url).href,
+                new URL("../images/mykola-mobile-3x.jpg", import.meta.url).href
             ],
-            default: "./images/mykola-mobile-1x.jpg"
+            default: new URL("../images/mykola-mobile-1x.jpg", import.meta.url).href
         },
         icons: [
-            "./images/symboldefs.svg#instagram",
-            "./images/symboldefs.svg#twitter",
-            "./images/symboldefs.svg#facebook",
-            "./images/symboldefs.svg#linkedin"
+            new URL("../images/symboldefs.svg#instagram", import.meta.url).href,
+            new URL("../images/symboldefs.svg#twitter", import.meta.url).href,
+            new URL("../images/symboldefs.svg#facebook", import.meta.url).href,
+            new URL("../images/symboldefs.svg#linkedin", import.meta.url).href
         ]
     },
     {
@@ -126,10 +130,10 @@ const dataDevelopersList = [
             default: "./images/muhailo-mobile-1x.jpg"
         },
         icons: [
-            "./images/symboldefs.svg#instagram",
-            "./images/symboldefs.svg#twitter",
-            "./images/symboldefs.svg#facebook",
-            "./images/symboldefs.svg#linkedin"
+            new URL("../images/symboldefs.svg#instagram", import.meta.url).href,
+            new URL("../images/symboldefs.svg#twitter", import.meta.url).href,
+            new URL("../images/symboldefs.svg#facebook", import.meta.url).href,
+            new URL("../images/symboldefs.svg#linkedin", import.meta.url).href
         ]
     },
 ];

@@ -61,7 +61,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":j="Parse error on
     {{/each}}
   </ul>
 </li>`;console.log("Будуэмо розмітку - список розробників");//! Знаходимо елемент в якому рендерим список розробників
-const Hn=document.querySelector(".our-developers-list");//! ❌ Рішення-1: --------------------------------------------------------------------------
+const Hn=document.querySelector(".our-developers-list");//! ❌ ---------------------------------- Рішення-1: ----------------------------------
 //!❌ Рішення-1: з створенням функції з new URL(...)(динамічний шлях без явного import):
 const R=e=>new URL(e,import.meta.url).href;//!❌ Рішення-1: Один з об'єктів для прикладу синтаксису:
 R("../images/igor-desktop-1x.jpg"),R("../images/igor-desktop-2x.jpg"),R("../images/igor-desktop-3x.jpg"),R("../images/igor-tablet-1x.jpg"),R("../images/igor-tablet-2x.jpg"),R("../images/igor-tablet-3x.jpg"),R("../images/igor-mobile-1x.jpg"),R("../images/igor-mobile-2x.jpg"),R("../images/igor-mobile-3x.jpg"),R("../images/igor-mobile-1x.jpg");//!✅ Рішення-3: з new URL(...)(динамічний шлях без явного import)
@@ -70,7 +70,7 @@ const Fe=[{name:"Ігор Дем'яненко",position:"Product Designer",image
 //! Дані для списку із JSON (так працює лише в http://localhost/):
 console.log("dataDevelopersList:",Fe);//!
 const kt=Dn.compile(Bn);console.log("template:",kt);//!
-//! Генеруємо HTML для всіх розробників
+//! Генеруємо HTML-розмітку для всіх розробників
 const wt=Fe.map(e=>kt(e)).join("");console.log("markup:",wt);//!
 //! Вставляємо у DOM
 Hn.innerHTML=wt;

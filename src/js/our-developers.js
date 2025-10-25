@@ -73,10 +73,10 @@ const dataDevelopersList = [
             default: igorMobile1x
         },
         icons: [
-            "./images/symboldefs.svg#instagram",
-            "./images/symboldefs.svg#twitter",
-            "./images/symboldefs.svg#facebook",
-            "./images/symboldefs.svg#linkedin"
+            new URL("../images/symboldefs.svg#instagram", import.meta.url).href,
+            new URL("../images/symboldefs.svg#twitter", import.meta.url).href,
+            new URL("../images/symboldefs.svg#facebook", import.meta.url).href,
+            new URL("../images/symboldefs.svg#linkedin", import.meta.url).href
         ]
     },
     {

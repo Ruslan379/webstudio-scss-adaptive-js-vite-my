@@ -1,24 +1,52 @@
-console.log("Будуэмо розмітку");
+console.log("Будуэмо розмітку - список розробників");
 
-//!❌ Рішення-1: з new URL(...)(динамічний шлях без явного import ):
-// const imgUrl = (relPath) => new URL(relPath, import.meta.url).href;
-function imgUrl(relPath) {
-    return new URL(relPath, import.meta.url).href;
+//! Знаходимо елемент в якому рендерим список розробників
+const developersList = document.querySelector(".our-developers-list");
+
+//! ❌ Рішення-1: --------------------------------------------------------------------------
+//!❌ Рішення-1: з створенням функції з new URL(...)(динамічний шлях без явного import):
+const imgUrl = (relPath) => new URL(relPath, import.meta.url).href;
+// function imgUrl(relPath) {
+//     return new URL(relPath, import.meta.url).href;
+// };
+//!❌ Рішення-1: Один з об'єктів для прикладу синтаксису:
+const images = {
+    desktop: [
+        imgUrl("../images/igor-desktop-1x.jpg"),
+        imgUrl("../images/igor-desktop-2x.jpg"),
+        imgUrl("../images/igor-desktop-3x.jpg")
+    ],
+    tablet: [
+        imgUrl("../images/igor-tablet-1x.jpg"),
+        imgUrl("../images/igor-tablet-2x.jpg"),
+        imgUrl("../images/igor-tablet-3x.jpg")
+    ],
+    mobile: [
+        imgUrl("../images/igor-mobile-1x.jpg"),
+        imgUrl("../images/igor-mobile-2x.jpg"),
+        imgUrl("../images/igor-mobile-3x.jpg")
+    ],
+    default: imgUrl("../images/igor-mobile-1x.jpg")
+        
 };
-// new URL("../images/symboldefs.svg#instagram", import.meta.url).href,
 
-//! Рішення-2:
-import olgaDesktop1x from "../images/olga-desktop-1x.jpg";
-import olgaDesktop2x from "../images/olga-desktop-2x.jpg";
-import olgaDesktop3x from "../images/olga-desktop-3x.jpg"
 
-import olgaTablet1x from "../images/olga-tablet-1x.jpg";
-import olgaTablet2x from "../images/olga-tablet-2x.jpg";
-import olgaTablet3x from "../images/olga-tablet-3x.jpg"
+//!✅ Рішення-2:
+import igorDesktop1x from "../images/igor-desktop-1x.jpg";
+import igorDesktop2x from "../images/igor-desktop-2x.jpg";
+import igorDesktop3x from "../images/igor-desktop-3x.jpg"
 
-import olgaMobile1x from "../images/olga-mobile-1x.jpg";
-import olgaMobile2x from "../images/olga-mobile-2x.jpg";
-import olgaMobile3x from "../images/olga-mobile-3x.jpg"
+import igorTablet1x from "../images/igor-tablet-1x.jpg";
+import igorTablet2x from "../images/igor-tablet-2x.jpg";
+import igorTablet3x from "../images/igor-tablet-3x.jpg"
+
+import igorMobile1x from "../images/igor-mobile-1x.jpg";
+import igorMobile2x from "../images/igor-mobile-2x.jpg";
+import igorMobile3x from "../images/igor-mobile-3x.jpg"
+
+
+//!✅ Рішення-3: з new URL(...)(динамічний шлях без явного import)
+new URL("../images/symboldefs.svg#instagram", import.meta.url).href;
 
 
 //! Дані для списку з масиву об'єктів:
@@ -28,22 +56,21 @@ const dataDevelopersList = [
         position: "Product Designer",
         images: {
             desktop: [
-                imgUrl("../images/igor-desktop-1x.jpg"),
-                imgUrl("../images/igor-desktop-2x.jpg"),
-                imgUrl("../images/igor-desktop-3x.jpg")
+                igorDesktop1x,
+                igorDesktop2x,
+                igorDesktop3x
             ],
             tablet: [
-                imgUrl("../images/igor-tablet-1x.jpg"),
-                imgUrl("../images/igor-tablet-2x.jpg"),
-                imgUrl("../images/igor-tablet-3x.jpg")
+                igorTablet1x,
+                igorTablet2x,
+                igorTablet3x
             ],
             mobile: [
-                imgUrl("../images/igor-mobile-1x.jpg"),
-                imgUrl("../images/igor-mobile-2x.jpg"),
-                imgUrl("../images/igor-mobile-3x.jpg")
+                igorMobile1x,
+                igorMobile2x,
+                igorMobile3x
             ],
-            default: imgUrl("../images/igor-mobile-1x.jpg")
-            ,
+            default: igorMobile1x
         },
         icons: [
             "./images/symboldefs.svg#instagram",
@@ -57,21 +84,21 @@ const dataDevelopersList = [
         position: "Frontend Developer",
         images: {
             desktop: [
-                olgaDesktop1x,
-                olgaDesktop2x,
-                olgaDesktop3x
+                new URL("../images/olga-desktop-1x.jpg", import.meta.url).href,
+                new URL("../images/olga-desktop-2x.jpg", import.meta.url).href,
+                new URL("../images/olga-desktop-3x.jpg", import.meta.url).href
             ],
             tablet: [
-                olgaTablet1x,
-                olgaTablet2x,
-                olgaTablet3x
+                new URL("../images/olga-tablet-1x.jpg", import.meta.url).href,
+                new URL("../images/olga-tablet-2x.jpg", import.meta.url).href,
+                new URL("../images/olga-tablet-3x.jpg", import.meta.url).href
             ],
             mobile: [
-                olgaMobile1x,
-                olgaMobile2x,
-                olgaMobile3x
+                new URL("../images/olga-mobile-1x.jpg", import.meta.url).href,
+                new URL("../images/olga-mobile-2x.jpg", import.meta.url).href,
+                new URL("../images/olga-mobile-3x.jpg", import.meta.url).href
             ],
-            default: olgaMobile1x
+            default: new URL("../images/olga-mobile-1x.jpg", import.meta.url).href
         },
         icons: [
             new URL("../images/symboldefs.svg#instagram", import.meta.url).href,
@@ -113,21 +140,21 @@ const dataDevelopersList = [
         position: "UI Designer",
         images: {
             desktop: [
-                "./images/muhailo-desktop-1x.jpg",
-                "./images/muhailo-desktop-2x.jpg",
-                "./images/muhailo-desktop-3x.jpg"
+                new URL("../images/muhailo-desktop-1x.jpg", import.meta.url).href,
+                new URL("../images/muhailo-desktop-2x.jpg", import.meta.url).href,
+                new URL("../images/muhailo-desktop-3x.jpg", import.meta.url).href
             ],
             tablet: [
-                "./images/muhailo-tablet-1x.jpg",
-                "./images/muhailo-tablet-2x.jpg",
-                "./images/muhailo-tablet-3x.jpg"
+                new URL("../images/muhailo-tablet-1x.jpg", import.meta.url).href,
+                new URL("../images/muhailo-tablet-2x.jpg", import.meta.url).href,
+                new URL("../images/muhailo-tablet-3x.jpg", import.meta.url).href
             ],
             mobile: [
-                "./images/muhailo-mobile-1x.jpg",
-                "./images/muhailo-mobile-2x.jpg",
-                "./images/muhailo-mobile-3x.jpg"
+                new URL("../images/muhailo-mobile-1x.jpg", import.meta.url).href,
+                new URL("../images/muhailo-mobile-2x.jpg", import.meta.url).href,
+                new URL("../images/muhailo-mobile-3x.jpg", import.meta.url).href
             ],
-            default: "./images/muhailo-mobile-1x.jpg"
+            default: new URL("../images/muhailo-mobile-1x.jpg", import.meta.url).href
         },
         icons: [
             new URL("../images/symboldefs.svg#instagram", import.meta.url).href,
@@ -141,13 +168,12 @@ const dataDevelopersList = [
 const JSONDevelopersList = JSON.stringify(dataDevelopersList);
 console.log("JSONDevelopersList:", JSONDevelopersList); //!
 
-//! Дані для списку із JSON:
+//! Дані для списку із JSON (так працює лише в http://localhost/):
 // import dataDevelopersList from "../json/developers-list.json";
 // console.log("dataDevelopersList:", dataDevelopersList); //!
 
-const developersList = document.querySelector(".our-developers-list");
 
-//todo: Розмітка
+//todo: Розмітка без 
 // const markup = dataDevelopersList
 //     .map(item =>
 //         `

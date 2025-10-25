@@ -170,7 +170,7 @@ console.log("JSONDevelopersList:", JSONDevelopersList); //!
 
 //! Дані для списку із JSON (так працює лише в http://localhost/):
 // import dataDevelopersList from "../json/developers-list.json";
-// console.log("dataDevelopersList:", dataDevelopersList); //!
+console.log("dataDevelopersList:", dataDevelopersList); //!
 
 
 //todo: Розмітка без 
@@ -258,9 +258,11 @@ import Handlebars from "handlebars";
 import developerTemplate from "../templates/developer.hbs?raw";
 
 const template = Handlebars.compile(developerTemplate);
+console.log("template:", template); //!
 
 //! Генеруємо HTML для всіх розробників
-const html = dataDevelopersList.map(dev => template(dev)).join("");
+const markup = dataDevelopersList.map(item => template(item)).join("");
+console.log("markup:", markup); //!
 
 //! Вставляємо у DOM
-developersList.innerHTML = html;
+developersList.innerHTML = markup;

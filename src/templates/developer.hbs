@@ -1,33 +1,34 @@
 <li class="our-developers-list__item">
   <picture>
-    {{#each images.desktop}}
+    
     <source 
         srcset="
+        {{#each images.desktop}}
           {{this}} 1x,
           {{this}} 2x,
           {{this}} 3x
+        {{/each}}
         " 
       media="(min-width: 1200px)" 
     />
-    {{/each}}
     <source 
-      {{#each images.tablet}}
         srcset="
+        {{#each images.tablet}}
           {{this}} 1x,
           {{this}} 2x,
           {{this}} 3x
+        {{/each}}
         " 
-      {{/each}}
       media="(min-width: 768px)" 
     />
     <source 
-      {{#each images.mobile}}
         srcset="
+        {{#each images.mobile}}
           {{this}} 1x,
           {{this}} 2x,
           {{this}} 3x
+        {{/each}}
         " 
-      {{/each}}
       media="(min-width: 480px)" 
     />
     <img class="our-developers-list__img" src="{{images.default}}" alt="{{name}}" />

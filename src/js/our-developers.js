@@ -1,7 +1,21 @@
 console.log("Будуэмо розмітку");
 
-//! Рішення з new URL(...)(динамічний шлях без явного import ):
+//!❌ Рішення-1: з new URL(...)(динамічний шлях без явного import ):
 const imgUrl = (relPath) => new URL(relPath, import.meta.url).href;
+
+//! Рішення-2:
+import olgaDesktop1x from "../images/olga-desktop-1x.jpg";
+import olgaDesktop2x from "../images/olga-desktop-2x.jpg";
+import olgaDesktop3x from "../images/olga-desktop-3x.jpg"
+
+import olgaTablet1x from "../images/olga-tablet-1x.jpg";
+import olgaTablet2x from "../images/olga-tablet-2x.jpg";
+import olgaTablet3x from "../images/olga-tablet-3x.jpg"
+
+import olgaMobile1x from "../images/olga-mobile-1x.jpg";
+import olgaMobile2x from "../images/olga-mobile-2x.jpg";
+import olgaMobile3x from "../images/olga-mobile-3x.jpg"
+
 
 //! Дані для списку з масиву об'єктів:
 const dataDevelopersList = [
@@ -24,7 +38,7 @@ const dataDevelopersList = [
                 imgUrl("../images/igor-mobile-2x.jpg"),
                 imgUrl("../images/igor-mobile-3x.jpg")
             ],
-            default: imgUrl("./images/igor-mobile-1x.jpg")
+            default: imgUrl("../images/igor-mobile-1x.jpg")
             ,
         },
         icons: [
@@ -39,24 +53,24 @@ const dataDevelopersList = [
         position: "Frontend Developer",
         images: {
             desktop: [
-                "./images/olga-desktop-1x.jpg",
-                "./images/olga-desktop-2x.jpg",
-                "./images/olga-desktop-3x.jpg"
+                olgaDesktop1x,
+                olgaDesktop2x,
+                olgaDesktop3x
             ],
             tablet: [
-                "./images/olga-tablet-1x.jpg",
-                "./images/olga-tablet-2x.jpg",
-                "./images/olga-tablet-3x.jpg"
+                olgaTablet1x,
+                olgaTablet2x,
+                olgaTablet3x
             ],
             mobile: [
-                "./images/olga-mobile-1x.jpg",
-                "./images/olga-mobile-2x.jpg",
-                "./images/olga-mobile-3x.jpg"
+                olgaMobile1x,
+                olgaMobile2x,
+                olgaMobile3x
             ],
-            default: "./images/olga-mobile-1x.jpg"
+            default: olgaMobile1x
         },
         icons: [
-            "./images/symboldefs.svg#instagram",
+            new URL('../images/symboldefs.svg#instagram', import.meta.url).href,
             "./images/symboldefs.svg#twitter",
             "./images/symboldefs.svg#facebook",
             "./images/symboldefs.svg#linkedin"

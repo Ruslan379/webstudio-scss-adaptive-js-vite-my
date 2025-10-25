@@ -8,17 +8,17 @@ const dataDevelopersList = [
             desktop: [
                 "./images/igor-desktop-1x.jpg",
                 "./images/igor-desktop-2x.jpg",
-                "./images/igor-desktop-3x.jpg",
+                "./images/igor-desktop-3x.jpg"
             ],
             tablet: [
                 "./images/igor-tablet-1x.jpg",
                 "./images/igor-tablet-2x.jpg",
-                "./images/igor-tablet-3x.jpg",
+                "./images/igor-tablet-3x.jpg"
             ],
             mobile: [
                 "./images/igor-mobile-1x.jpg",
                 "./images/igor-mobile-2x.jpg",
-                "./images/igor-mobile-3x.jpg",
+                "./images/igor-mobile-3x.jpg"
             ],
             default: "./images/igor-mobile-1x.jpg"
         },
@@ -36,17 +36,17 @@ const dataDevelopersList = [
             desktop: [
                 "/images/olga-desktop-1x.jpg",
                 "/images/olga-desktop-2x.jpg",
-                "/images/olga-desktop-3x.jpg",
+                "/images/olga-desktop-3x.jpg"
             ],
             tablet: [
                 "./images/olga-tablet-1x.jpg",
                 "./images/olga-tablet-2x.jpg",
-                "./images/olga-tablet-3x.jpg",
+                "./images/olga-tablet-3x.jpg"
             ],
             mobile: [
                 "./images/olga-mobile-1x.jpg",
                 "./images/olga-mobile-2x.jpg",
-                "./images/olga-mobile-3x.jpg",
+                "./images/olga-mobile-3x.jpg"
             ],
             default: "./images/olga-mobile-1x.jpg"
         },
@@ -64,12 +64,12 @@ const dataDevelopersList = [
             desktop: [
                 "images/mykola-desktop-1x.jpg",
                 "images/mykola-desktop-2x.jpg",
-                "images/mykola-desktop-3x.jpg",
+                "images/mykola-desktop-3x.jpg"
             ],
             tablet: [
                 "./images/mykola-tablet-1x.jpg",
                 "./images/mykola-tablet-2x.jpg",
-                "./images/mykola-tablet-3x.jpg",
+                "./images/mykola-tablet-3x.jpg"
             ],
             mobile: [
                 "./images/mykola-mobile-1x.jpg",
@@ -92,17 +92,17 @@ const dataDevelopersList = [
             desktop: [
                 "./images/muhailo-desktop-1x.jpg",
                 "./images/muhailo-desktop-2x.jpg",
-                "./images/muhailo-desktop-3x.jpg",
+                "./images/muhailo-desktop-3x.jpg"
             ],
             tablet: [
                 "./images/muhailo-tablet-1x.jpg",
                 "./images/muhailo-tablet-2x.jpg",
-                "./images/muhailo-tablet-3x.jpg",
+                "./images/muhailo-tablet-3x.jpg"
             ],
             mobile: [
                 "./images/muhailo-mobile-1x.jpg",
                 "./images/muhailo-mobile-2x.jpg",
-                "./images/muhailo-mobile-3x.jpg",
+                "./images/muhailo-mobile-3x.jpg"
             ],
             default: "./images/muhailo-mobile-1x.jpg"
         },

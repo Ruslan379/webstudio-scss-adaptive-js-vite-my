@@ -3,7 +3,7 @@
     <source 
         srcset="
         {{#each images.desktop}}
-          {{this}} 1x,
+          {{this}}
         {{/each}}
         " 
       media="(min-width: 1200px)" 
@@ -11,9 +11,7 @@
     <source 
         srcset="
         {{#each images.tablet}}
-          {{this}} 1x,
-          {{this}} 2x,
-          {{this}} 3x
+          {{this}}
         {{/each}}
         " 
       media="(min-width: 768px)" 
@@ -21,9 +19,7 @@
     <source 
         srcset="
         {{#each images.mobile}}
-          {{this}} 1x,
-          {{this}} 2x,
-          {{this}} 3x
+          {{this}}
         {{/each}}
         " 
       media="(min-width: 480px)" 

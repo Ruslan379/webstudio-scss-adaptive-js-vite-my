@@ -52,24 +52,23 @@ new URL("../images/symboldefs.svg#instagram", import.meta.url).href;
 //! Дані для списку з масиву об'єктів:
 const dataDevelopersList = [
     {
-        x: [1,2,3],
         name: "Ігор Дем'яненко",
         position: "Product Designer",
         images: {
             desktop: [
-                igorDesktop1x,
-                igorDesktop2x,
-                igorDesktop3x
+                igorDesktop1x + " 1x,",
+                igorDesktop2x + " 2x,",
+                igorDesktop3x + " 3x"
             ],
             tablet: [
-                igorTablet1x,
-                igorTablet2x,
-                igorTablet3x
+                igorTablet1x + " 1x,",
+                igorTablet2x + " 2x,",
+                igorTablet3x + " 3x"
             ],
             mobile: [
-                igorMobile1x,
-                igorMobile2x,
-                igorMobile3x
+                igorMobile1x + " 1x,",
+                igorMobile2x + " 2x,",
+                igorMobile3x + " 3x"
             ],
             default: igorMobile1x
         },
@@ -81,24 +80,23 @@ const dataDevelopersList = [
         ]
     },
     {
-        x: [1, 2, 3],
         name: "Ольга Рєпіна",
         position: "Frontend Developer",
         images: {
             desktop: [
-                new URL("../images/olga-desktop-1x.jpg", import.meta.url).href,
-                new URL("../images/olga-desktop-2x.jpg", import.meta.url).href,
-                new URL("../images/olga-desktop-3x.jpg", import.meta.url).href
+                new URL("../images/olga-desktop-1x.jpg", import.meta.url).href + " 1x,",
+                new URL("../images/olga-desktop-2x.jpg", import.meta.url).href + " 2x,",
+                new URL("../images/olga-desktop-3x.jpg", import.meta.url).href + " 3x"
             ],
             tablet: [
-                new URL("../images/olga-tablet-1x.jpg", import.meta.url).href,
-                new URL("../images/olga-tablet-2x.jpg", import.meta.url).href,
-                new URL("../images/olga-tablet-3x.jpg", import.meta.url).href
+                new URL("../images/olga-tablet-1x.jpg", import.meta.url).href + " 1x,",
+                new URL("../images/olga-tablet-2x.jpg", import.meta.url).href + " 2x,",
+                new URL("../images/olga-tablet-3x.jpg", import.meta.url).href + " 3x"
             ],
             mobile: [
-                new URL("../images/olga-mobile-1x.jpg", import.meta.url).href,
-                new URL("../images/olga-mobile-2x.jpg", import.meta.url).href,
-                new URL("../images/olga-mobile-3x.jpg", import.meta.url).href
+                new URL("../images/olga-mobile-1x.jpg", import.meta.url).href + " 1x,",
+                new URL("../images/olga-mobile-2x.jpg", import.meta.url).href + " 2x,",
+                new URL("../images/olga-mobile-3x.jpg", import.meta.url).href + " 3x"
             ],
             default: new URL("../images/olga-mobile-1x.jpg", import.meta.url).href
         },
@@ -110,24 +108,23 @@ const dataDevelopersList = [
         ]
     },
     {
-        x: [1, 2, 3],
         name: "Микола Тарасов",
         position: "Marketing",
         images: {
             desktop: [
-                new URL("../images/mykola-desktop-1x.jpg", import.meta.url).href,
-                new URL("../images/mykola-desktop-2x.jpg", import.meta.url).href,
-                new URL("../images/mykola-desktop-3x.jpg", import.meta.url).href
+                new URL("../images/mykola-desktop-1x.jpg", import.meta.url).href + " 1x,",
+                new URL("../images/mykola-desktop-2x.jpg", import.meta.url).href + " 2x,",
+                new URL("../images/mykola-desktop-3x.jpg", import.meta.url).href + " 3x"
             ],
             tablet: [
-                new URL("../images/mykola-tablet-1x.jpg", import.meta.url).href,
-                new URL("../images/mykola-tablet-2x.jpg", import.meta.url).href,
-                new URL("../images/mykola-tablet-3x.jpg", import.meta.url).href
+                new URL("../images/mykola-tablet-1x.jpg", import.meta.url).href + " 1x,",
+                new URL("../images/mykola-tablet-2x.jpg", import.meta.url).href + " 2x,",
+                new URL("../images/mykola-tablet-3x.jpg", import.meta.url).href + " 3x"
             ],
             mobile: [
-                new URL("../images/mykola-mobile-1x.jpg", import.meta.url).href,
-                new URL("../images/mykola-mobile-2x.jpg", import.meta.url).href,
-                new URL("../images/mykola-mobile-3x.jpg", import.meta.url).href
+                new URL("../images/mykola-mobile-1x.jpg", import.meta.url).href + " 1x,",
+                new URL("../images/mykola-mobile-2x.jpg", import.meta.url).href + " 2x,",
+                new URL("../images/mykola-mobile-3x.jpg", import.meta.url).href + " 3x"
             ],
             default: new URL("../images/mykola-mobile-1x.jpg", import.meta.url).href
         },
@@ -139,24 +136,23 @@ const dataDevelopersList = [
         ]
     },
     {
-        x: [1, 2, 3],
         name: "Михайло Єрмаков",
         position: "UI Designer",
         images: {
             desktop: [
-                new URL("../images/muhailo-desktop-1x.jpg", import.meta.url).href,
-                new URL("../images/muhailo-desktop-2x.jpg", import.meta.url).href,
-                new URL("../images/muhailo-desktop-3x.jpg", import.meta.url).href
+                new URL("../images/muhailo-desktop-1x.jpg", import.meta.url).href + " 1x,",
+                new URL("../images/muhailo-desktop-2x.jpg", import.meta.url).href + " 2x,",
+                new URL("../images/muhailo-desktop-3x.jpg", import.meta.url).href + " 3x"
             ],
             tablet: [
-                new URL("../images/muhailo-tablet-1x.jpg", import.meta.url).href,
-                new URL("../images/muhailo-tablet-2x.jpg", import.meta.url).href,
-                new URL("../images/muhailo-tablet-3x.jpg", import.meta.url).href
+                new URL("../images/muhailo-tablet-1x.jpg", import.meta.url).href + " 1x,",
+                new URL("../images/muhailo-tablet-2x.jpg", import.meta.url).href + " 2x,",
+                new URL("../images/muhailo-tablet-3x.jpg", import.meta.url).href + " 3x"
             ],
             mobile: [
-                new URL("../images/muhailo-mobile-1x.jpg", import.meta.url).href,
-                new URL("../images/muhailo-mobile-2x.jpg", import.meta.url).href,
-                new URL("../images/muhailo-mobile-3x.jpg", import.meta.url).href
+                new URL("../images/muhailo-mobile-1x.jpg", import.meta.url).href + " 1x,",
+                new URL("../images/muhailo-mobile-2x.jpg", import.meta.url).href + " 2x,",
+                new URL("../images/muhailo-mobile-3x.jpg", import.meta.url).href + " 3x"
             ],
             default: new URL("../images/muhailo-mobile-1x.jpg", import.meta.url).href
         },

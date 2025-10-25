@@ -3,7 +3,8 @@ console.log("Будуэмо розмітку - список розробникі
 //! Знаходимо елемент в якому рендерим список розробників
 const developersList = document.querySelector(".our-developers-list");
 
-//! ❌ Рішення-1: --------------------------------------------------------------------------
+
+//! ❌ ---------------------------------- Рішення-1: ----------------------------------
 //!❌ Рішення-1: з створенням функції з new URL(...)(динамічний шлях без явного import):
 const imgUrl = (relPath) => new URL(relPath, import.meta.url).href;
 // function imgUrl(relPath) {
@@ -27,8 +28,8 @@ const images = {
         imgUrl("../images/igor-mobile-3x.jpg")
     ],
     default: imgUrl("../images/igor-mobile-1x.jpg")
-        
 };
+//! ❌ __________________________________ Рішення-1: __________________________________
 
 
 //!✅ Рішення-2:
@@ -168,12 +169,14 @@ const dataDevelopersList = [
 const JSONDevelopersList = JSON.stringify(dataDevelopersList);
 console.log("JSONDevelopersList:", JSONDevelopersList); //!
 
+
 //! Дані для списку із JSON (так працює лише в http://localhost/):
 // import dataDevelopersList from "../json/developers-list.json";
 console.log("dataDevelopersList:", dataDevelopersList); //!
 
 
-//todo: Розмітка без 
+//todo: ++++++++++++++++++++++++ Розмітка без Handlebars ++++++++++++++++++++++++
+
 // const markup = dataDevelopersList
 //     .map(item =>
 //         `
@@ -252,15 +255,14 @@ console.log("dataDevelopersList:", dataDevelopersList); //!
 // console.log("markup:", markup); //!
 
 
-//todo: ++++++++++++++++++++++++ Handlebars +++++++++++++++++++++++++++++
+//todo: +++++++++++++++++++++++++ Розмітка з Handlebars +++++++++++++++++++++++++
 import Handlebars from "handlebars";
-// import developersData from "../data/developers.json";
 import developerTemplate from "../templates/developer.hbs?raw";
 
 const template = Handlebars.compile(developerTemplate);
 console.log("template:", template); //!
 
-//! Генеруємо HTML для всіх розробників
+//! Генеруємо HTML-розмітку для всіх розробників
 const markup = dataDevelopersList.map(item => template(item)).join("");
 console.log("markup:", markup); //!
 

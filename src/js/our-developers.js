@@ -119,6 +119,7 @@ console.log("Будуэмо розмітку");
 // console.log("JSONDevelopersList:", JSONDevelopersList); //!
 
 import dataDevelopersList from "../json/developers-list.json";
+console.log("dataDevelopersList:", dataDevelopersList); //!
 
 const developersList = document.querySelector(".our-developers-list");
 

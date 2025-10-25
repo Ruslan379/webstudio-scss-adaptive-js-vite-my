@@ -52,6 +52,7 @@ new URL("../images/symboldefs.svg#instagram", import.meta.url).href;
 //! Дані для списку з масиву об'єктів:
 const dataDevelopersList = [
     {
+        x: [1,2,3],
         name: "Ігор Дем'яненко",
         position: "Product Designer",
         images: {
@@ -80,6 +81,7 @@ const dataDevelopersList = [
         ]
     },
     {
+        x: [1, 2, 3],
         name: "Ольга Рєпіна",
         position: "Frontend Developer",
         images: {
@@ -108,6 +110,7 @@ const dataDevelopersList = [
         ]
     },
     {
+        x: [1, 2, 3],
         name: "Микола Тарасов",
         position: "Marketing",
         images: {
@@ -136,6 +139,7 @@ const dataDevelopersList = [
         ]
     },
     {
+        x: [1, 2, 3],
         name: "Михайло Єрмаков",
         position: "UI Designer",
         images: {

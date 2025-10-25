@@ -1,125 +1,131 @@
 console.log("Будуэмо розмітку");
 
-// const dataDevelopersList = [
-//     {
-//         name: "Ігор Дем'яненко",
-//         position: "Product Designer",
-//         images: {
-//             desktop: [
-//                 "./images/igor-desktop-1x.jpg",
-//                 "./images/igor-desktop-2x.jpg",
-//                 "./images/igor-desktop-3x.jpg"
-//             ],
-//             tablet: [
-//                 "./images/igor-tablet-1x.jpg",
-//                 "./images/igor-tablet-2x.jpg",
-//                 "./images/igor-tablet-3x.jpg"
-//             ],
-//             mobile: [
-//                 "./images/igor-mobile-1x.jpg",
-//                 "./images/igor-mobile-2x.jpg",
-//                 "./images/igor-mobile-3x.jpg"
-//             ],
-//             default: "./images/igor-mobile-1x.jpg"
-//         },
-//         icons: [
-//             "./images/symboldefs.svg#instagram",
-//             "./images/symboldefs.svg#twitter",
-//             "./images/symboldefs.svg#facebook",
-//             "./images/symboldefs.svg#linkedin"
-//         ]
-//     },
-//     {
-//         name: "Ольга Рєпіна",
-//         position: "Frontend Developer",
-//         images: {
-//             desktop: [
-//                 "./images/olga-desktop-1x.jpg",
-//                 "./images/olga-desktop-2x.jpg",
-//                 "./images/olga-desktop-3x.jpg"
-//             ],
-//             tablet: [
-//                 "./images/olga-tablet-1x.jpg",
-//                 "./images/olga-tablet-2x.jpg",
-//                 "./images/olga-tablet-3x.jpg"
-//             ],
-//             mobile: [
-//                 "./images/olga-mobile-1x.jpg",
-//                 "./images/olga-mobile-2x.jpg",
-//                 "./images/olga-mobile-3x.jpg"
-//             ],
-//             default: "./images/olga-mobile-1x.jpg"
-//         },
-//         icons: [
-//             "./images/symboldefs.svg#instagram",
-//             "./images/symboldefs.svg#twitter",
-//             "./images/symboldefs.svg#facebook",
-//             "./images/symboldefs.svg#linkedin"
-//         ]
-//     },
-//     {
-//         name: "Микола Тарасов",
-//         position: "Marketing",
-//         images: {
-//             desktop: [
-//                 "./images/mykola-desktop-1x.jpg",
-//                 "./images/mykola-desktop-2x.jpg",
-//                 "./images/mykola-desktop-3x.jpg"
-//             ],
-//             tablet: [
-//                 "./images/mykola-tablet-1x.jpg",
-//                 "./images/mykola-tablet-2x.jpg",
-//                 "./images/mykola-tablet-3x.jpg"
-//             ],
-//             mobile: [
-//                 "./images/mykola-mobile-1x.jpg",
-//                 "./images/mykola-mobile-2x.jpg",
-//                 "./images/mykola-mobile-3x.jpg",
-//             ],
-//             default: "./images/mykola-mobile-1x.jpg"
-//         },
-//         icons: [
-//             "./images/symboldefs.svg#instagram",
-//             "./images/symboldefs.svg#twitter",
-//             "./images/symboldefs.svg#facebook",
-//             "./images/symboldefs.svg#linkedin"
-//         ]
-//     },
-//     {
-//         name: "Михайло Єрмаков",
-//         position: "UI Designer",
-//         images: {
-//             desktop: [
-//                 "./images/muhailo-desktop-1x.jpg",
-//                 "./images/muhailo-desktop-2x.jpg",
-//                 "./images/muhailo-desktop-3x.jpg"
-//             ],
-//             tablet: [
-//                 "./images/muhailo-tablet-1x.jpg",
-//                 "./images/muhailo-tablet-2x.jpg",
-//                 "./images/muhailo-tablet-3x.jpg"
-//             ],
-//             mobile: [
-//                 "./images/muhailo-mobile-1x.jpg",
-//                 "./images/muhailo-mobile-2x.jpg",
-//                 "./images/muhailo-mobile-3x.jpg"
-//             ],
-//             default: "./images/muhailo-mobile-1x.jpg"
-//         },
-//         icons: [
-//             "./images/symboldefs.svg#instagram",
-//             "./images/symboldefs.svg#twitter",
-//             "./images/symboldefs.svg#facebook",
-//             "./images/symboldefs.svg#linkedin"
-//         ]
-//     },
-// ];
+//! Рішення з new URL(...)(динамічний шлях без явного import ):
+const imgUrl = (relPath) => new URL(relPath, import.meta.url).href;
 
-// const JSONDevelopersList = JSON.stringify(dataDevelopersList);
-// console.log("JSONDevelopersList:", JSONDevelopersList); //!
+//! Дані для списку з масиву об'єктів:
+const dataDevelopersList = [
+    {
+        name: "Ігор Дем'яненко",
+        position: "Product Designer",
+        images: {
+            desktop: [
+                imgUrl("../images/igor-desktop-1x.jpg"),
+                imgUrl("../images/igor-desktop-2x.jpg"),
+                imgUrl("../images/igor-desktop-3x.jpg")
+            ],
+            tablet: [
+                imgUrl("../images/igor-tablet-1x.jpg"),
+                imgUrl("../images/igor-tablet-2x.jpg"),
+                imgUrl("../images/igor-tablet-3x.jpg")
+            ],
+            mobile: [
+                imgUrl("../images/igor-mobile-1x.jpg"),
+                imgUrl("../images/igor-mobile-2x.jpg"),
+                imgUrl("../images/igor-mobile-3x.jpg")
+            ],
+            default: imgUrl("./images/igor-mobile-1x.jpg")
+            ,
+        },
+        icons: [
+            "./images/symboldefs.svg#instagram",
+            "./images/symboldefs.svg#twitter",
+            "./images/symboldefs.svg#facebook",
+            "./images/symboldefs.svg#linkedin"
+        ]
+    },
+    {
+        name: "Ольга Рєпіна",
+        position: "Frontend Developer",
+        images: {
+            desktop: [
+                "./images/olga-desktop-1x.jpg",
+                "./images/olga-desktop-2x.jpg",
+                "./images/olga-desktop-3x.jpg"
+            ],
+            tablet: [
+                "./images/olga-tablet-1x.jpg",
+                "./images/olga-tablet-2x.jpg",
+                "./images/olga-tablet-3x.jpg"
+            ],
+            mobile: [
+                "./images/olga-mobile-1x.jpg",
+                "./images/olga-mobile-2x.jpg",
+                "./images/olga-mobile-3x.jpg"
+            ],
+            default: "./images/olga-mobile-1x.jpg"
+        },
+        icons: [
+            "./images/symboldefs.svg#instagram",
+            "./images/symboldefs.svg#twitter",
+            "./images/symboldefs.svg#facebook",
+            "./images/symboldefs.svg#linkedin"
+        ]
+    },
+    {
+        name: "Микола Тарасов",
+        position: "Marketing",
+        images: {
+            desktop: [
+                "./images/mykola-desktop-1x.jpg",
+                "./images/mykola-desktop-2x.jpg",
+                "./images/mykola-desktop-3x.jpg"
+            ],
+            tablet: [
+                "./images/mykola-tablet-1x.jpg",
+                "./images/mykola-tablet-2x.jpg",
+                "./images/mykola-tablet-3x.jpg"
+            ],
+            mobile: [
+                "./images/mykola-mobile-1x.jpg",
+                "./images/mykola-mobile-2x.jpg",
+                "./images/mykola-mobile-3x.jpg",
+            ],
+            default: "./images/mykola-mobile-1x.jpg"
+        },
+        icons: [
+            "./images/symboldefs.svg#instagram",
+            "./images/symboldefs.svg#twitter",
+            "./images/symboldefs.svg#facebook",
+            "./images/symboldefs.svg#linkedin"
+        ]
+    },
+    {
+        name: "Михайло Єрмаков",
+        position: "UI Designer",
+        images: {
+            desktop: [
+                "./images/muhailo-desktop-1x.jpg",
+                "./images/muhailo-desktop-2x.jpg",
+                "./images/muhailo-desktop-3x.jpg"
+            ],
+            tablet: [
+                "./images/muhailo-tablet-1x.jpg",
+                "./images/muhailo-tablet-2x.jpg",
+                "./images/muhailo-tablet-3x.jpg"
+            ],
+            mobile: [
+                "./images/muhailo-mobile-1x.jpg",
+                "./images/muhailo-mobile-2x.jpg",
+                "./images/muhailo-mobile-3x.jpg"
+            ],
+            default: "./images/muhailo-mobile-1x.jpg"
+        },
+        icons: [
+            "./images/symboldefs.svg#instagram",
+            "./images/symboldefs.svg#twitter",
+            "./images/symboldefs.svg#facebook",
+            "./images/symboldefs.svg#linkedin"
+        ]
+    },
+];
 
-import dataDevelopersList from "../json/developers-list.json";
-console.log("dataDevelopersList:", dataDevelopersList); //!
+const JSONDevelopersList = JSON.stringify(dataDevelopersList);
+console.log("JSONDevelopersList:", JSONDevelopersList); //!
+
+//! Дані для списку із JSON:
+// import dataDevelopersList from "../json/developers-list.json";
+// console.log("dataDevelopersList:", dataDevelopersList); //!
 
 const developersList = document.querySelector(".our-developers-list");
 

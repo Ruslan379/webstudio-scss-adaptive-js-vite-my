@@ -58,21 +58,21 @@ const dataDevelopersList = [
         position: "Product Designer",
         images: {
             desktop: [
-                imgUrl("../images/igor-desktop-1x.jpg"),
-                imgUrl("../images/igor-desktop-2x.jpg"),
-                imgUrl("../images/igor-desktop-3x.jpg")
+                igorDesktop1x + " 1x,", //!✅ Рішення-2:
+                igorDesktop2x + " 2x,", //!✅ Рішення-2:
+                igorDesktop3x + " 3x" //!✅ Рішення-2:
             ],
             tablet: [
-                imgUrl("../images/igor-tablet-1x.jpg"),
-                imgUrl("../images/igor-tablet-2x.jpg"),
-                imgUrl("../images/igor-tablet-3x.jpg")
+                igorTablet1x + " 1x,", //!✅ Рішення-2:
+                igorTablet2x + " 2x,", //!✅ Рішення-2:
+                igorTablet3x + " 3x" //!✅ Рішення-2:
             ],
             mobile: [
-                imgUrl("../images/igor-mobile-1x.jpg"),
-                imgUrl("../images/igor-mobile-2x.jpg"),
-                imgUrl("../images/igor-mobile-3x.jpg")
+                igorMobile1x + " 1x,", //!✅ Рішення-2:
+                igorMobile2x + " 2x,", //!✅ Рішення-2:
+                igorMobile3x + " 3x" //!✅ Рішення-2:
             ],
-            default: imgUrl("../images/igor-mobile-1x.jpg")
+            default: igorMobile1x //!✅ Рішення-2:
         },
         icons: [
             //!✅ Рішення-3:

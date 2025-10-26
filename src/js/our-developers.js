@@ -29,6 +29,7 @@ const images = {
     ],
     default: imgUrl("../images/igor-mobile-1x.jpg")
 };
+console.log("images:", images); //!
 //! ❌ __________________________________ Рішення-1: __________________________________
 
 
@@ -53,27 +54,28 @@ new URL("../images/symboldefs.svg#instagram", import.meta.url).href;
 //! Дані для списку з масиву об'єктів:
 const dataDevelopersList = [
     {
-        name: "Ігор Дем'яненко",
+        name: "Ігор Дем'яненко", 
         position: "Product Designer",
         images: {
             desktop: [
-                igorDesktop1x + " 1x,",
-                igorDesktop2x + " 2x,",
-                igorDesktop3x + " 3x"
+                igorDesktop1x + " 1x,", //!✅ Рішення-2:
+                igorDesktop2x + " 2x,", //!✅ Рішення-2:
+                igorDesktop3x + " 3x" //!✅ Рішення-2:
             ],
             tablet: [
-                igorTablet1x + " 1x,",
-                igorTablet2x + " 2x,",
-                igorTablet3x + " 3x"
+                igorTablet1x + " 1x,", //!✅ Рішення-2:
+                igorTablet2x + " 2x,", //!✅ Рішення-2:
+                igorTablet3x + " 3x" //!✅ Рішення-2:
             ],
             mobile: [
-                igorMobile1x + " 1x,",
-                igorMobile2x + " 2x,",
-                igorMobile3x + " 3x"
+                igorMobile1x + " 1x,", //!✅ Рішення-2:
+                igorMobile2x + " 2x,", //!✅ Рішення-2:
+                igorMobile3x + " 3x" //!✅ Рішення-2:
             ],
-            default: igorMobile1x
+            default: igorMobile1x //!✅ Рішення-2:
         },
         icons: [
+            //!✅ Рішення-3:
             new URL("../images/symboldefs.svg#instagram", import.meta.url).href,
             new URL("../images/symboldefs.svg#twitter", import.meta.url).href,
             new URL("../images/symboldefs.svg#facebook", import.meta.url).href,
@@ -81,6 +83,7 @@ const dataDevelopersList = [
         ]
     },
     {
+        //!✅ Рішення-3:
         name: "Ольга Рєпіна",
         position: "Frontend Developer",
         images: {
@@ -109,6 +112,7 @@ const dataDevelopersList = [
         ]
     },
     {
+        //!✅ Рішення-3:
         name: "Микола Тарасов",
         position: "Marketing",
         images: {
@@ -137,6 +141,7 @@ const dataDevelopersList = [
         ]
     },
     {
+        //!✅ Рішення-3:
         name: "Михайло Єрмаков",
         position: "UI Designer",
         images: {

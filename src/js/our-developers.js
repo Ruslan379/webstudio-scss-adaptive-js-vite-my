@@ -13,21 +13,21 @@ const imgUrl = (relPath) => new URL(relPath, import.meta.url).href;
 //!❌ Рішення-1: Один з об'єктів для прикладу синтаксису:
 const images = {
     desktop: [
-        imgUrl("../images/igor-desktop-1x.jpg"),
-        imgUrl("../images/igor-desktop-2x.jpg"),
-        imgUrl("../images/igor-desktop-3x.jpg")
+        imgUrl("../images/igor-desktop-1x.jpg"), //!❌ Рішення-1:
+        imgUrl("../images/igor-desktop-2x.jpg"), //!❌ Рішення-1:
+        imgUrl("../images/igor-desktop-3x.jpg") //!❌ Рішення-1:
     ],
     tablet: [
-        imgUrl("../images/igor-tablet-1x.jpg"),
-        imgUrl("../images/igor-tablet-2x.jpg"),
-        imgUrl("../images/igor-tablet-3x.jpg")
+        imgUrl("../images/igor-tablet-1x.jpg"), //!❌ Рішення-1:
+        imgUrl("../images/igor-tablet-2x.jpg"), //!❌ Рішення-1:
+        imgUrl("../images/igor-tablet-3x.jpg") //!❌ Рішення-1:
     ],
     mobile: [
-        imgUrl("../images/igor-mobile-1x.jpg"),
-        imgUrl("../images/igor-mobile-2x.jpg"),
-        imgUrl("../images/igor-mobile-3x.jpg")
+        imgUrl("../images/igor-mobile-1x.jpg"), //!❌ Рішення-1:
+        imgUrl("../images/igor-mobile-2x.jpg"), //!❌ Рішення-1:
+        imgUrl("../images/igor-mobile-3x.jpg") //!❌ Рішення-1:
     ],
-    default: imgUrl("../images/igor-mobile-1x.jpg")
+    default: imgUrl("../images/igor-mobile-1x.jpg") //!❌ Рішення-1:
 };
 console.log("images:", images); //!
 //! ❌ __________________________________ Рішення-1: __________________________________

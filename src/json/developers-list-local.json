@@ -4,21 +4,21 @@
         "position": "Product Designer",
         "images": {
             "desktop": [
-                "/webstudio-scss-adaptive-js-vite-my/images/igor-desktop-1x.jpg 1x,",
-                "/webstudio-scss-adaptive-js-vite-my/images/igor-desktop-2x.jpg 2x,",
-                "/webstudio-scss-adaptive-js-vite-my/images/igor-desktop-3x.jpg 3x"
+                "http://localhost:5176/webstudio-scss-adaptive-js-vite-my/images/igor-desktop-1x.jpg 1x,",
+                "http://localhost:5176/webstudio-scss-adaptive-js-vite-my/images/igor-desktop-2x.jpg 2x,",
+                "http://localhost:5176/webstudio-scss-adaptive-js-vite-my/images/igor-desktop-3x.jpg 3x"
             ],
             "tablet": [
-                "/webstudio-scss-adaptive-js-vite-my/images/igor-tablet-1x.jpg 1x,",
-                "/webstudio-scss-adaptive-js-vite-my/images/igor-tablet-2x.jpg 2x,",
-                "/webstudio-scss-adaptive-js-vite-my/images/igor-tablet-3x.jpg 3x"
+                "http://localhost:5176/webstudio-scss-adaptive-js-vite-my/images/igor-tablet-1x.jpg 1x,",
+                "http://localhost:5176/webstudio-scss-adaptive-js-vite-my/images/igor-tablet-2x.jpg 2x,",
+                "http://localhost:5176/webstudio-scss-adaptive-js-vite-my/images/igor-tablet-3x.jpg 3x"
             ],
             "mobile": [
-                "/webstudio-scss-adaptive-js-vite-my/images/igor-mobile-1x.jpg 1x,",
-                "/webstudio-scss-adaptive-js-vite-my/images/igor-mobile-2x.jpg 2x,",
-                "/webstudio-scss-adaptive-js-vite-my/images/igor-mobile-3x.jpg 3x"
+                "http://localhost:5176/webstudio-scss-adaptive-js-vite-my/images/igor-mobile-1x.jpg 1x,",
+                "http://localhost:5176/webstudio-scss-adaptive-js-vite-my/images/igor-mobile-2x.jpg 2x,",
+                "http://localhost:5176/webstudio-scss-adaptive-js-vite-my/images/igor-mobile-3x.jpg 3x"
             ],
-            "default": "/webstudio-scss-adaptive-js-vite-my/images/igor-mobile-1x.jpg"
+            "default": "http://localhost:5176/webstudio-scss-adaptive-js-vite-my/images/igor-mobile-1x.jpg"
         },
         "icons": [
             "http://localhost:5176/webstudio-scss-adaptive-js-vite-my/images/symboldefs.svg#instagram",

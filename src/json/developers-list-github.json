@@ -4,21 +4,21 @@
         "position": "Product Designer",
         "images": {
             "desktop": [
-                "/webstudio-scss-adaptive-js-vite-my/assets/igor-desktop-1x-b138e391.jpg 1x,",
-                "/webstudio-scss-adaptive-js-vite-my/assets/igor-desktop-2x-18e23e2e.jpg 2x,",
-                "/webstudio-scss-adaptive-js-vite-my/assets/igor-desktop-3x-f0641e09.jpg 3x"
+                "https://ruslan379.github.io/webstudio-scss-adaptive-js-vite-my/assets/igor-desktop-1x-b138e391.jpg 1x,",
+                "https://ruslan379.github.io/webstudio-scss-adaptive-js-vite-my/assets/igor-desktop-2x-18e23e2e.jpg 2x,",
+                "https://ruslan379.github.io/webstudio-scss-adaptive-js-vite-my/assets/igor-desktop-3x-f0641e09.jpg 3x"
             ],
             "tablet": [
-                "/webstudio-scss-adaptive-js-vite-my/assets/igor-tablet-1x-a1f96800.jpg 1x,",
-                "/webstudio-scss-adaptive-js-vite-my/assets/igor-tablet-2x-5bd351b1.jpg 2x,",
-                "/webstudio-scss-adaptive-js-vite-my/assets/igor-tablet-3x-4c28ed9e.jpg 3x"
+                "https://ruslan379.github.io/webstudio-scss-adaptive-js-vite-my/assets/igor-tablet-1x-a1f96800.jpg 1x,",
+                "https://ruslan379.github.io/webstudio-scss-adaptive-js-vite-my/assets/igor-tablet-2x-5bd351b1.jpg 2x,",
+                "https://ruslan379.github.io/webstudio-scss-adaptive-js-vite-my/assets/igor-tablet-3x-4c28ed9e.jpg 3x"
             ],
             "mobile": [
-                "/webstudio-scss-adaptive-js-vite-my/assets/igor-mobile-1x-9e045f9a.jpg 1x,",
-                "/webstudio-scss-adaptive-js-vite-my/assets/igor-mobile-2x-dedb5f8b.jpg 2x,",
-                "/webstudio-scss-adaptive-js-vite-my/assets/igor-mobile-3x-e67f5e2c.jpg 3x"
+                "https://ruslan379.github.io/webstudio-scss-adaptive-js-vite-my/assets/igor-mobile-1x-9e045f9a.jpg 1x,",
+                "https://ruslan379.github.io/webstudio-scss-adaptive-js-vite-my/assets/igor-mobile-2x-dedb5f8b.jpg 2x,",
+                "https://ruslan379.github.io/webstudio-scss-adaptive-js-vite-my/assets/igor-mobile-3x-e67f5e2c.jpg 3x"
             ],
-            "default": "/webstudio-scss-adaptive-js-vite-my/assets/igor-mobile-1x-9e045f9a.jpg"
+            "default": "https://ruslan379.github.io/webstudio-scss-adaptive-js-vite-my/assets/igor-mobile-1x-9e045f9a.jpg"
         },
         "icons": [
             "https://ruslan379.github.io/webstudio-scss-adaptive-js-vite-my/assets/symboldefs-fedcc540.svg#instagram",

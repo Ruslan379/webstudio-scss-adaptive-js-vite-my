@@ -50,8 +50,7 @@ import igorMobile3x from "../images/igor-mobile-3x.jpg"
 //!✅ Рішення-3: з new URL(...)(динамічний шлях без явного import)
 new URL("../images/symboldefs.svg#instagram", import.meta.url).href;
 
-
-//! Дані для списку з масиву об'єктів:
+//! Дані для списку з масиву об'єктів (ПРИКЛАД з різними Рішеннями):
 let dataDevelopersList = [
     {
         name: "Ігор Дем'яненко", 
@@ -170,9 +169,10 @@ let dataDevelopersList = [
         ]
     },
 ];
-console.log("dataDevelopersList (з різними Рішеннями):", dataDevelopersList); //!
+console.log("dataDevelopersList (ПРИКЛАД з різними Рішеннями):", dataDevelopersList); //!
 
-//! Робимо фінальний варіант dataDevelopersList з урахуванням найкращого варіанта: Рішення-3
+
+//! ✅1️⃣Робимо фінальний варіант dataDevelopersList з урахуванням найкращого варіанта: Рішення-3
 dataDevelopersList = [
     {
         name: "Ігор Дем'яненко",
@@ -287,20 +287,36 @@ dataDevelopersList = [
         ]
     },
 ];
-console.warn("dataDevelopersList (фінальний):", dataDevelopersList); //!
+console.warn("1️⃣dataDevelopersList (фінальний):", dataDevelopersList); //!
 
-//! Перетворюємо об'єкт в JSON:
+
+//! ✅2️⃣Перетворюємо масив об'єктів dataDevelopersList в JSON:
 const JSONdevelopersList = JSON.stringify(dataDevelopersList);
-console.warn("JSONdevelopersList (фінальний):", JSONdevelopersList); //!
+console.warn("2️⃣JSONdevelopersList (фінальний):", JSONdevelopersList); //!
 
 
-//! Дані для списку із JSON (так працює лише в http://localhost/):
+//! ❌Дані для списку із JSON (так працює лише в http://localhost/):
 // import dataDevelopersList from "../json/developers-list.json";
-console.log("dataDevelopersList:", dataDevelopersList); //!
+// console.log("dataDevelopersList:", dataDevelopersList); //!
+
+
+//! ✅3️⃣Використаємо Локальне сховище (localStorage) у якості бази даних (db) для зберігання dataDevelopersList
+// localStorage.setItem("data", JSONdevelopersList); //todo: var. 1
+localStorage.setItem("data", JSON.stringify(dataDevelopersList)); //todo: var. 2
+
+
+//! 4️⃣Зчитуємо дані з Локального сховища (localStorage)
+const localStorageDataDevelopersList = localStorage.getItem("data");
+console.log("4️⃣localStorageDataDevelopersList:", localStorageDataDevelopersList);
+
+
+//! 5️⃣Парсимо (конвертуємо) дані отримані з Локального сховища (localStorage) в масив об'єктів dataDevelopersList
+// dataDevelopersList = JSON.parse(localStorageDataDevelopersList); //todo: var. 1
+dataDevelopersList = JSON.parse(localStorage.getItem("data")); //todo: var. 2
+console.log("5️⃣dataDevelopersList (після парсингу з localStorage):", dataDevelopersList);
 
 
 //todo: ++++++++++++++++++++++++ Розмітка без Handlebars ++++++++++++++++++++++++
-
 // const markup = dataDevelopersList
 //     .map(item =>
 //         `

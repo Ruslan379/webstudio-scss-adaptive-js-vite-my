@@ -77,7 +77,7 @@ const Bs=JSON.stringify(U);console.warn("2️⃣JSONdevelopersList (фіналь
 localStorage.setItem("data",JSON.stringify(U));//! 4️⃣Зчитуємо дані з Локального сховища (localStorage)
 const Hs=localStorage.getItem("data");console.log("4️⃣localStorageDataDevelopersList:",Hs);//! 5️⃣Парсимо (конвертуємо) дані отримані з Локального сховища (localStorage) в масив об'єктів dataDevelopersList
 U=JSON.parse(localStorage.getItem("data"));console.log("5️⃣dataDevelopersList (після парсингу з localStorage):",U);const wt=Ns.compile(js);console.log("template:",wt);//!
-//! Генеруємо HTML-розмітку для всіх розробників
-const kt=U.map(e=>wt(e)).join("");console.log("markup:",kt);//!
-//! Вставляємо у DOM
+//! 6️⃣Генеруємо HTML-розмітку для списку всіх розробників
+const kt=U.map(e=>wt(e)).join("");console.log("6️⃣markup:",kt);//!
+//! 7️⃣Додаємо у DOM
 Ds.innerHTML=kt;

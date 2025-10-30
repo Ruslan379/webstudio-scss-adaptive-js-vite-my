@@ -389,10 +389,14 @@ console.log("5️⃣dataDevelopersList (після парсингу з localStor
 //         `
 //     )
 //     .join("");
+
+// //! 6️⃣Генеруємо HTML-розмітку для списку всіх розробників
+// console.log("6️⃣markup:", markup); //!
+
+//! 7️⃣Додаємо у DOM
 // // developersList.innerHTML = ""; //todo: var.1
 // // developersList.insertAdjacentHTML("beforeend", markup); //todo: var.1
 // developersList.innerHTML = markup; //todo: var.2
-// console.log("markup:", markup); //!
 
 
 //todo: +++++++++++++++++++++++++ Розмітка з Handlebars +++++++++++++++++++++++++
@@ -402,9 +406,9 @@ import developerTemplate from "../templates/developer.hbs?raw";
 const template = Handlebars.compile(developerTemplate);
 console.log("template:", template); //!
 
-//! Генеруємо HTML-розмітку для всіх розробників
+//! 6️⃣Генеруємо HTML-розмітку для списку всіх розробників
 const markup = dataDevelopersList.map(item => template(item)).join("");
-console.log("markup:", markup); //!
+console.log("6️⃣markup:", markup); //!
 
-//! Вставляємо у DOM
+//! 7️⃣Додаємо у DOM
 developersList.innerHTML = markup;

@@ -861,6 +861,7 @@ body {
   text-align: center;
   padding-bottom: 24px;
   margin-bottom: 30px;
+  outline: 1px solid blue;
 }
 @media screen and (min-width: 768px) {
   .our-developers-list__item {

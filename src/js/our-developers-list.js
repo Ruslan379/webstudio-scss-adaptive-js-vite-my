@@ -1,4 +1,4 @@
-console.log("Будуэмо розмітку - список розробників");
+console.error('Рендеримо список розробників в секції "Наша команда"');
 
 //! Знаходимо елемент в якому рендерим список розробників
 const developersList = document.querySelector(".our-developers-list");

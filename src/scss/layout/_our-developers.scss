@@ -20,7 +20,7 @@
   &-list {
     align-items: center;
     justify-content: center;
-
+    
     @media screen and (min-width: getBreakPoint("tablet")) {
       display: flex;
       flex-direction: row;
@@ -40,6 +40,7 @@
       text-align: center;
       padding-bottom: 24px;
       margin-bottom: 30px;
+      outline: 1px solid blue;
 
       @media screen and (min-width: getBreakPoint("tablet")) {
         width: 354px;

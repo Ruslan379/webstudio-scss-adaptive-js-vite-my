@@ -11,10 +11,21 @@ developersList.addEventListener("click", editDeleteDeveloper);
 //! Функція ДОДАЄ нових розробників
 function addDeveloper() {
     console.log("ДОДАЄМО нового розробника");
+    //! ВІДКРИИВАЄМО модальне вікно з формою для ДОДАВАННЯ
+    // toggleModalAddDeveloper();
 };
 
 //! Функція РЕДАГУЄ/ВИДАЛЯЄ розробників
 function editDeleteDeveloper(event) {
+    if (event.target.nodeName !== "IMG") {
+        return;
+    };
     console.log("РЕДАГУЄМО/ВИДАЛЯЄМО розробників");
-    console.log("event.target", event.target);
+
+    // console.log("event.target", event.target);
+    // console.log("event.currentTarget:", event.currentTarget);
+    // console.log("event.target.nodeName", event.target.nodeName);
+
+    //! ВІДКРИИВАЄМО модальне вікно з формою для РЕДАГУВАННЯ/ВИДАЛЕННЯ
+    // toggleModalEditDeleteDeveloper();
 };

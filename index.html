@@ -23,7 +23,7 @@
 
     <!-- Main CSS -->
     
-    <script type="module" crossorigin src="/webstudio-scss-adaptive-js-vite-my/assets/index-51b6bec5.js"></script>
+    <script type="module" crossorigin src="/webstudio-scss-adaptive-js-vite-my/assets/index-2f565924.js"></script>
     <link rel="modulepreload" crossorigin href="/webstudio-scss-adaptive-js-vite-my/assets/mob-menu-0921860b.js">
     <link rel="modulepreload" crossorigin href="/webstudio-scss-adaptive-js-vite-my/assets/modal-e8ceb953.js">
     <link rel="stylesheet" href="/webstudio-scss-adaptive-js-vite-my/assets/mob-menu-f92f96ec.css">
@@ -704,6 +704,27 @@
               Відправити
             </button>
           </div>
+        </form>
+      </div>
+    </div>
+
+    <!--? Модальне вікно для Додавання/Редагування КАРТКИ ПОСТА -->
+    <div class="backdrop-add-edit-developer is-hidden" data-modal-add-edit-developer>
+      <div class="modal-add-edit-developer">
+        <form id="form-add-edit-developer">
+          <h3 id="form-add-edit-developer-title"></h3>
+          <div class="image-developer-box">
+            <img 
+              class="image-developer" 
+              src="/webstudio-scss-adaptive-js-vite-my/assets/igor-mobile-1x-9e045f9a.jpg" 
+              alt="developer igor" 
+            />
+          </div>
+          <input type="text" name="developerName" placeholder="Ім'я" required />
+          <input type="text" name="body" placeholder="Посада" required />
+          <button type="submit" class="btn-edit-developer">Редагувати</button>
+          <button type="button" class="btn-delete-developer" data-btn-delete-developer>Видалити</button>
+          <button type="button" class="btn-cancel-edit-delete-developer" data-btn-cancel-edit-delete-developer>Скасувати</button>
         </form>
       </div>
     </div>

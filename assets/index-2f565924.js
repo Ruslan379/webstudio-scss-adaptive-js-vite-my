@@ -83,7 +83,7 @@ const kt=U.map(e=>wt(e)).join("");console.log("6️⃣markup:",kt);//!
 Ds.innerHTML=kt;console.error('Додаємо/Редагуємо/Видаляємо розробників в секції "Наша команда"');//! Знаходимо необхідні елементи
 const Ts=document.querySelector(".our-developers__add-button"),qs=document.querySelector(".our-developers-list");//! Додаємо слухачів до знайдених елементів
 Ts.addEventListener("click",Fs);qs.addEventListener("click",Vs);//! Функція ДОДАЄ нових розробників
-function Fs(){console.log("ДОДАЄМО нового розробника");//! ВІДКРИИВАЄМО модальне вікно з формою для ДОДАВАННЯ
+function Fs(){console.log("ДОДАЄМО нового розробника");//! ВІДКРИИВАЄМО модальне вікно з формою для ДОДАВАННЯ/РЕДАГУВАННЯ
 }//! Функція РЕДАГУЄ/ВИДАЛЯЄ розробників
 function Vs(e){if(e.target.nodeName!=="IMG")return;console.log("РЕДАГУЄМО/ВИДАЛЯЄМО розробників");//! ВІДКРИИВАЄМО модальне вікно з формою для РЕДАГУВАННЯ/ВИДАЛЕННЯ
 }

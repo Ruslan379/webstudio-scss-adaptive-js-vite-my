@@ -86,5 +86,5 @@ qs.addEventListener("click",Gs);Fs.addEventListener("click",Ws);//! Функці
 function xt(){console.log("ВІДКРИТТЯ/ЗАКРИТТЯ модального вікна з формою для ДОДАВАННЯ/РЕДАГУВАННЯ/ВИДАЛЕННЯ"),Vs.classList.toggle("is-hidden"),document.body.classList.toggle("no-scroll")}//! Функція ДОДАЄ нових розробників
 function Gs(){console.log("ДОДАЄМО нового розробника");//! ВІДКРИИВАЄМО модальне вікно з формою для ДОДАВАННЯ/РЕДАГУВАННЯ
 xt()}//! Функція РЕДАГУЄ/ВИДАЛЯЄ розробників
-function Ws(e){if(e.target.nodeName!=="IMG")return;console.log("РЕДАГУЄМО/ВИДАЛЯЄМО розробників");//! ВІДКРИИВАЄМО модальне вікно з формою для РЕДАГУВАННЯ/ВИДАЛЕННЯ
+function Ws(e){if(e.target.nodeName!=="IMG")return;console.log("РЕДАГУЄМО/ВИДАЛЯЄМО розробників");//! ВІДКРИВАЄМО модальне вікно з формою для РЕДАГУВАННЯ/ВИДАЛЕННЯ
 xt()}

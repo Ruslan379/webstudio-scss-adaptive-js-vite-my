@@ -704,6 +704,27 @@
       </div>
     </div>
 
+    <!--? Модальне вікно для Додавання/Редагування КАРТКИ ПОСТА -->
+    <div class="backdrop-add-edit-developer is-hidden" data-modal-add-edit-developer>
+      <div class="modal-add-edit-developer">
+        <form id="form-add-edit-developer">
+          <h3 id="form-add-edit-developer-title"></h3>
+          <div class="image-developer-box">
+            <img 
+              class="image-developer" 
+              src="./images/igor-mobile-1x.jpg" 
+              alt="developer igor" 
+            />
+          </div>
+          <input type="text" name="developerName" placeholder="Ім'я" required />
+          <input type="text" name="body" placeholder="Посада" required />
+          <button type="submit" class="btn-edit-developer">Редагувати</button>
+          <button type="button" class="btn-delete-developer" data-btn-delete-developer>Видалити</button>
+          <button type="button" class="btn-cancel-edit-delete-developer" data-btn-cancel-edit-delete-developer>Скасувати</button>
+        </form>
+      </div>
+    </div>
+
     <!--? Scripts -->
     <!--! Рендерить список розробників в секції "Наша команда" -->
     <script type="module" src="./js/our-developers-list.js"></script>

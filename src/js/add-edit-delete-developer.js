@@ -11,8 +11,8 @@ developersList.addEventListener("click", editDeleteDeveloper);
 //! Функція ДОДАЄ нових розробників
 function addDeveloper() {
     console.log("ДОДАЄМО нового розробника");
-    //! ВІДКРИИВАЄМО модальне вікно з формою для ДОДАВАННЯ
-    // toggleModalAddDeveloper();
+    //! ВІДКРИИВАЄМО модальне вікно з формою для ДОДАВАННЯ/РЕДАГУВАННЯ
+    // toggleModalAddEditDeveloper();
 };
 
 //! Функція РЕДАГУЄ/ВИДАЛЯЄ розробників

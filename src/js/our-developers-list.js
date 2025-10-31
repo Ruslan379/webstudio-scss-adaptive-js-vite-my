@@ -380,7 +380,7 @@ console.log("5️⃣dataDevelopersList (після парсингу з localStor
 //                     <li class="our-developers-svg-list__item">
 //                         <a class="our-developers-svg-list__link" href="#">
 //                             <svg width="20" height="20">
-//                                 <use href=".${item.icons[3]}"></use>
+//                                 <use href="${item.icons[3]}"></use>
 //                             </svg>
 //                         </a>
 //                     </li>

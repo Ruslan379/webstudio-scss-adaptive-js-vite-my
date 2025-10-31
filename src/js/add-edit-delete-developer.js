@@ -37,6 +37,6 @@ function editDeleteDeveloper(event) {
     // console.log("event.currentTarget:", event.currentTarget);
     // console.log("event.target.nodeName", event.target.nodeName);
 
-    //! ВІДКРИИВАЄМО модальне вікно з формою для РЕДАГУВАННЯ/ВИДАЛЕННЯ
+    //! ВІДКРИВАЄМО модальне вікно з формою для РЕДАГУВАННЯ/ВИДАЛЕННЯ
     toggleModalAddEditDeleteDeveloper();
 };

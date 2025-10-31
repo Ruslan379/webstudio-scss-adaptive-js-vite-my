@@ -876,6 +876,7 @@ body {
 .our-developers-list__img {
   margin-bottom: 30px;
   width: 450px;
+  cursor: pointer;
 }
 .our-developers-list__text {
   color: #212121;

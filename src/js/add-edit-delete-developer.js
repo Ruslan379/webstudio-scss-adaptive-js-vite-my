@@ -3,16 +3,27 @@ console.error('Додаємо/Редагуємо/Видаляємо розроб
 //! Знаходимо необхідні елементи
 const addDeveloperButton = document.querySelector(".our-developers__add-button");
 const developersList = document.querySelector(".our-developers-list");
+const modalAddEditDeveloper = document.querySelector(".backdrop-add-edit-developer ");
 
 //! Додаємо слухачів до знайдених елементів
 addDeveloperButton.addEventListener("click", addDeveloper);
 developersList.addEventListener("click", editDeleteDeveloper);
 
+
+//! Функція ВІДКРИТТЯ/ЗАКРИТТЯ модального вікна з формою для ДОДАВАННЯ/РЕДАГУВАННЯ/ВИДАЛЕННЯ
+function toggleModalAddEditDeleteDeveloper() {
+    console.log("ВІДКРИТТЯ/ЗАКРИТТЯ модального вікна з формою для ДОДАВАННЯ/РЕДАГУВАННЯ/ВИДАЛЕННЯ");
+    modalAddEditDeveloper.classList.toggle("is-hidden");
+    document.body.classList.toggle("no-scroll");
+};
+
 //! Функція ДОДАЄ нових розробників
 function addDeveloper() {
     console.log("ДОДАЄМО нового розробника");
     //! ВІДКРИИВАЄМО модальне вікно з формою для ДОДАВАННЯ/РЕДАГУВАННЯ
-    // toggleModalAddEditDeveloper();
+    toggleModalAddEditDeleteDeveloper();
+
+    
 };
 
 //! Функція РЕДАГУЄ/ВИДАЛЯЄ розробників
@@ -27,5 +38,5 @@ function editDeleteDeveloper(event) {
     // console.log("event.target.nodeName", event.target.nodeName);
 
     //! ВІДКРИИВАЄМО модальне вікно з формою для РЕДАГУВАННЯ/ВИДАЛЕННЯ
-    // toggleModalEditDeleteDeveloper();
+    toggleModalAddEditDeleteDeveloper();
 };

@@ -19,14 +19,17 @@ const btnCancelDeveloper = document.querySelector("[data-btn-cancel-developer]")
 
 //! Початкові дані 
 let editableCard = {}; //todo: Картка розробника, що редагується
+let index = null; //todo: index картки в масиві для РЕДАГУВАННЯ/ВИДАЛЕННЯ
 
 
 //! ++++++++++++=+++++++++++ Додаємо слухачів до знайдених елементів ++++++++++++++=+++++++++
-addDeveloperButton.addEventListener("click", addDeveloper);
-developersList.addEventListener("click", editDeleteDeveloper);
-btnCancelDeveloper.addEventListener("click", closeModalAddEditDeveloper);
-//todo: Підтвердження форм
-formAddEditDeveloper.addEventListener("submit", editModalAddEditDeveloper);
+addDeveloperButton.addEventListener("click", addDeveloper); //todo: кнопка <Додати розробника>
+developersList.addEventListener("click", editDeleteDeveloper); //todo: список КАРТОК РОЗРОБНИКІВ
+
+formAddEditDeveloper.addEventListener("submit", editModalAddEditDeveloper); //todo: підтвердження форми <Додати> або <Редагувати>
+
+btnDeleteDeveloper.addEventListener("click", toggleModalСonfirmDelete); //todo: кнопка <Видалити>
+btnCancelDeveloper.addEventListener("click", closeModalAddEditDeveloper); //todo: кнопка <Скасувати>
 //! =========================================================================================
 
 
@@ -35,15 +38,6 @@ function toggleModalAddEditDeveloper() {
     console.log("ВІДКРИТТЯ/ЗАКРИТТЯ модального вікна з формою для ДОДАВАННЯ/РЕДАГУВАННЯ/ВИДАЛЕННЯ");
     modalAddEditDeveloper.classList.toggle("is-hidden");
     document.body.classList.toggle("no-scroll");
-};
-
-
-//! Функція реагує на кнопку <Скасувати> - очищує поля форми та закривє модальне вікно з формою для ДОДАВАННЯ/РЕДАГУВАННЯ/+ВИДАЛЕННЯ
-function closeModalAddEditDeveloper() {
-    imageDeveloper.src = "";
-    imageDeveloper.alt = "";
-    formAddEditDeveloper.reset();
-    toggleModalAddEditDeveloper();
 };
 
 
@@ -88,12 +82,14 @@ function editDeleteDeveloper(event) {
     //todo: Повертаємо елементи:
     btnDeleteDeveloper.style.display = "block";
 
-    //todo: Пошук картки розробника, що редагується в Масиві Об'єктів всіх розробників
+    //todo: Пошук КАРТКИ РОЗРОБНИКА, що редагується та її ИНДЕКСА в dataDevelopersList
     console.log("event.target.alt", event.target.alt); //!
     for (let i = 0; i < dataDevelopersList.length; i++) {
         if (dataDevelopersList[i].nameId === event.target.alt) {
             editableCard = dataDevelopersList[i];
             console.log("editableCard:", editableCard);  //todo: Картка розробника, що редагується
+            index = i;
+            console.log("index:", index); //!
         };
     };
 
@@ -108,11 +104,11 @@ function editDeleteDeveloper(event) {
 };
 
 
-//! Функція реагує на кнопку <ДОДАТИ> або <Редагувати>- змінює/додає картку розробника в формі для ДОДАВАННЯ/РЕДАГУВАННЯ/+ВИДАЛЕННЯ
+//! Функція підтвердження форми: реагує на кнопку <ДОДАТИ> або <Редагувати> - змінює/додає картку розробника в формі для ДОДАВАННЯ/РЕДАГУВАННЯ/+ВИДАЛЕННЯ
 function editModalAddEditDeveloper(event) {
     // event.preventDefault(); //todo: ❗️❗️❗️ Блокуємо перезавантаження сторінки
-    console.log("Створюємо новий об'єкт КАРТКИ РОЗРОБНИКА");
 
+    console.log("Створюємо новий об'єкт КАРТКИ РОЗРОБНИКА");
     //todo: var.1 Створюємо новий об'єкт КАРТКИ РОЗРОБНИКА
     // const createNewDeveloper = {
     //     developerName: formAddEditDeveloper.developerName.value.trim(),
@@ -125,7 +121,15 @@ function editModalAddEditDeveloper(event) {
 
     console.log("newDeveloperData:", newDeveloperData); //!
 
-    //todo: Перевірка на функціонал <ДОДАТИ> або <Редагувати>
+    //todo: Пошук индекса картки розробника, що РЕДАГУЄТЬСЯ/ВИДАЛЯЄТЬСЯ
+    // for (let i = 0; i < dataDevelopersList.length; i++) {
+    //     if (editableCard.nameId === dataDevelopersList[i].nameId) {
+    //         // console.log("editableCard_ДО:", dataDevelopersList[i]);  //todo: Картка розробника, що редагується - ДО
+    //         index = i;
+    //         // console.log("index:", index); //!
+    //     };
+    // };
+
     //todo: ДОДАВАННЯ
     if (btnAddEditDeveloper.textContent === "Додати") {
         console.log("Режим ДОДАВАННЯ");
@@ -159,35 +163,56 @@ function editModalAddEditDeveloper(event) {
                 new URL("../images/symboldefs.svg#facebook", import.meta.url).href,
                 new URL("../images/symboldefs.svg#linkedin", import.meta.url).href
             ]
-        }
+        };
 
         //todo: Додаємо новий об'єкт КАРТКИ РОЗРОБНИКА в Масив Об'єктів: dataDevelopersList
         dataDevelopersList.push(newDeveloperCard);
-        console.log("dataDevelopersList (після ДОДАВАННЯ нової КАРТКИ РОЗРОБНИКА):", dataDevelopersList); //!
-
-        //todo: ПЕРЕЗАПИСУЄМО змінений dataDevelopersList в Локальне сховище (localStorage)
-        localStorage.setItem("data", JSON.stringify(dataDevelopersList));
+        // console.log("dataDevelopersList (після ДОДАВАННЯ нової КАРТКИ РОЗРОБНИКА):", dataDevelopersList); //!
     };
 
     //todo: РЕДАГУВАННЯ
     if (btnAddEditDeveloper.textContent === "Редагувати") {
         console.log("Режим РЕДАГУВАННЯ");
-        //todo: Пошук картки розробника, що редагується та заміна властивостей
-        for (let i = 0; i < dataDevelopersList.length; i++) {
-            if (editableCard.nameId === dataDevelopersList[i].nameId) {
-                // console.log("editableCard_ДО:", dataDevelopersList[i]);  //todo: Картка розробника, що редагується - ДО
-                dataDevelopersList[i].name = newDeveloperData.developerName;
-                dataDevelopersList[i].position = newDeveloperData.developerPosition;
-                // console.log("editableCard_ПІСЛЯ:", dataDevelopersList[i]);  //todo: Картка розробника, що відредагована - ПІСЛЯ
-                // console.log("dataDevelopersList (після РЕДАГУВАННЯ):", dataDevelopersList); //!
-                //todo: ПЕРЕЗАПИСУЄМО змінений dataDevelopersList в Локальне сховище (localStorage)
-                localStorage.setItem("data", JSON.stringify(dataDevelopersList)); 
-            };
-        };
+        ///todo: Заміна властивостей
+        dataDevelopersList[index].name = newDeveloperData.developerName;
+        dataDevelopersList[index].position = newDeveloperData.developerPosition;
+        // console.log("editableCard_ПІСЛЯ:", dataDevelopersList[index]);  //todo: Картка розробника, що відредагована - ПІСЛЯ
+        // console.log("dataDevelopersList (після РЕДАГУВАННЯ):", dataDevelopersList); //!
     };
+
+    //todo: ПЕРЕЗАПИСУЄМО змінений dataDevelopersList в Локальне сховище (localStorage)
+    localStorage.setItem("data", JSON.stringify(dataDevelopersList));
 
     //todo: ОЧИЩАЄМО поля форми для РЕДАГУВАННЯ/ВИДАЛЕННЯ
     formAddEditDeveloper.reset();
+
     //todo: ЗАКРИВАЄМО модальне вікно з формою для РЕДАГУВАННЯ/ВИДАЛЕННЯ
+    toggleModalAddEditDeveloper();
+};
+
+
+//! Функція реагує на кнопку <Видалити> - ВИДАЛЯЄ картку розробника 
+function toggleModalСonfirmDelete() {
+    console.log("Режим ВИДАЛЕННЯ");
+    console.log("index:", index); //!
+    dataDevelopersList.splice(index, 1);
+    console.log("dataDevelopersList (після ВИДАЛЕННЯ):", dataDevelopersList); //!
+    
+    //todo: ПЕРЕЗАПИСУЄМО змінений dataDevelopersList в Локальне сховище (localStorage)
+    localStorage.setItem("data", JSON.stringify(dataDevelopersList));
+
+    //todo: ОЧИЩАЄМО поля форми для РЕДАГУВАННЯ/ВИДАЛЕННЯ
+    formAddEditDeveloper.reset();
+
+    //todo: ЗАКРИВАЄМО модальне вікно з формою для РЕДАГУВАННЯ/ВИДАЛЕННЯ
+    toggleModalAddEditDeveloper();
+};
+
+
+//! Функція реагує на кнопку <Скасувати> - очищує поля форми та закривє модальне вікно з формою для ДОДАВАННЯ/РЕДАГУВАННЯ/+ВИДАЛЕННЯ
+function closeModalAddEditDeveloper() {
+    imageDeveloper.src = "";
+    imageDeveloper.alt = "";
+    formAddEditDeveloper.reset();
     toggleModalAddEditDeveloper();
 };

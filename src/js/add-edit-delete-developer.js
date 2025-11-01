@@ -121,7 +121,7 @@ function editModalAddEditDeveloper(event) {
 
     console.log("newDeveloperData:", newDeveloperData); //!
 
-    //todo: Пошук индекса картки розробника, що РЕДАГУЄТЬСЯ/ВИДАЛЯЄТЬСЯ
+    //todo: Пошук индекса картки розробника, що РЕДАГУЄТЬСЯ/ВИДАЛЯЄТЬСЯ (НЕ ТУТ)
     // for (let i = 0; i < dataDevelopersList.length; i++) {
     //     if (editableCard.nameId === dataDevelopersList[i].nameId) {
     //         // console.log("editableCard_ДО:", dataDevelopersList[i]);  //todo: Картка розробника, що редагується - ДО
@@ -194,9 +194,9 @@ function editModalAddEditDeveloper(event) {
 //! Функція реагує на кнопку <Видалити> - ВИДАЛЯЄ картку розробника 
 function toggleModalСonfirmDelete() {
     console.log("Режим ВИДАЛЕННЯ");
-    console.log("index:", index); //!
+    // console.log("index:", index); //!
     dataDevelopersList.splice(index, 1);
-    console.log("dataDevelopersList (після ВИДАЛЕННЯ):", dataDevelopersList); //!
+    // console.log("dataDevelopersList (після ВИДАЛЕННЯ):", dataDevelopersList); //!
 
     //todo: ПЕРЕЗАПИСУЄМО змінений dataDevelopersList в Локальне сховище (localStorage)
     localStorage.setItem("data", JSON.stringify(dataDevelopersList));

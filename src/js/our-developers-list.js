@@ -306,7 +306,9 @@ console.warn("2️⃣JSONdevelopersList (фінальний):", JSONdevelopersLi
 
 //! ✅3️⃣Використаємо Локальне сховище (localStorage) у якості бази даних (db) для зберігання dataDevelopersList
 // localStorage.setItem("data", JSONdevelopersList); //todo: var. 1
-localStorage.setItem("data", JSON.stringify(dataDevelopersList)); //todo: var. 2
+// localStorage.setItem("data", JSON.stringify(dataDevelopersList)); //todo: var. 2
+//! ✅3️⃣-1️⃣УМОВА: Якщо немає даних (dataDevelopersList) в Локальному сховище (localStorage), то додаємо dataDevelopersList
+if (!(localStorage.getItem("data"))) localStorage.setItem("data", JSON.stringify(dataDevelopersList));
 
 
 //! 4️⃣Зчитуємо дані з Локального сховища (localStorage)

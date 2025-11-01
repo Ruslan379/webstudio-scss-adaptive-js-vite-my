@@ -18,7 +18,7 @@ const btnDeleteDeveloper = document.querySelector("[data-btn-delete-developer]")
 const btnCancelDeveloper = document.querySelector("[data-btn-cancel-developer]");
 
 //! Початкові дані 
-let editableCard = {}; //todo-new: Какртка розробника, що редагується
+let editableCard = {}; //todo: Картка розробника, що редагується
 
 
 //! ++++++++++++=+++++++++++ Додаємо слухачів до знайдених елементів ++++++++++++++=+++++++++
@@ -93,13 +93,13 @@ function editDeleteDeveloper(event) {
     for (let i = 0; i < dataDevelopersList.length; i++) {
         if (dataDevelopersList[i].nameId === event.target.alt) {
             editableCard = dataDevelopersList[i];
-            console.log("editableCard:", editableCard);  //todo-new: Какртка розробника, що редагується
+            console.log("editableCard:", editableCard);  //todo: Картка розробника, що редагується
         };
     };
 
     //todo: Підставляємо ПОПЕРЕДНІ дані картки розробника editableCard у форму для РЕДАГУВАННЯ
     formAddEditDeveloper.developerName.value = editableCard.name;
-    formAddEditDeveloper.position.value = editableCard.position;
+    formAddEditDeveloper.developerPosition.value = editableCard.position;
     imageDeveloper.src = editableCard.images.default;
     imageDeveloper.alt = editableCard.nameId;
 
@@ -110,21 +110,40 @@ function editDeleteDeveloper(event) {
 
 //! Функція реагує на кнопку <ДОДАТИ> або <Редагувати>- змінює/додає картку розробника в формі для ДОДАВАННЯ/РЕДАГУВАННЯ/+ВИДАЛЕННЯ
 function editModalAddEditDeveloper(event) {
-    event.preventDefault();
+    // event.preventDefault(); //todo: ❗️❗️❗️ Блокуємо перезавантаження сторінки
     console.log("Створюємо новий об'єкт КАРТКИ РОЗРОБНИКА");
-    // //todo: var.1 Створюємо новий об'єкт КАРТКИ РОЗРОБНИКА
-    // // const newComment = {
-    // //     timeId: Date.now(),
-    // //     name: postFormInputComment.name.value.trim(),
-    // //     comment: postFormInputComment.comment.value.trim(),
-    // //     date: localeUkDate,
-    // // };
 
-    // //todo: var.2 Створюємо новий об'єкт КАРТКИ РОЗРОБНИКА
-    // const formData = new FormData(postFormInputComment);
-    // const createNewComment = Object.fromEntries(formData.entries());
-    // // console.log("createNewComment:", createNewComment); //!
-    // const newComment = { timeId, ...createNewComment, date: localeUkDate };
+    //todo: var.1 Створюємо новий об'єкт КАРТКИ РОЗРОБНИКА
+    // const createNewDeveloper = {
+    //     developerName: formAddEditDeveloper.developerName.value.trim(),
+    //     developerPosition: formAddEditDeveloper.developerPosition.value.trim(),
+    // };
+
+    //todo: var.2 Створюємо новий об'єкт КАРТКИ РОЗРОБНИКА
+    const formData = new FormData(formAddEditDeveloper);
+    const newDeveloperCard = Object.fromEntries(formData.entries());
+
+    console.log("newDeveloperCard:", newDeveloperCard); //!
+
+    //todo: Перевірка на функціонал <ДОДАТИ> або <Редагувати>
+    if (btnAddEditDeveloper.textContent === "Редагувати") {
+        console.log("Режим РЕДАГУВАННЯ");
+        //todo: Пошук картки розробника, що редагується та заміна властивостей
+        for (let i = 0; i < dataDevelopersList.length; i++) {
+            if (editableCard.nameId === dataDevelopersList[i].nameId) {
+                // console.log("editableCard_ДО:", dataDevelopersList[i]);  //todo: Картка розробника, що редагується - ДО
+                dataDevelopersList[i].name = newDeveloperCard.developerName;
+                dataDevelopersList[i].position = newDeveloperCard.developerPosition;
+                // console.log("editableCard_ПІСЛЯ:", dataDevelopersList[i]);  //todo: Картка розробника, що відредагована - ПІСЛЯ
+                // console.log("dataDevelopersList (після РЕДАГУВАННЯ):", dataDevelopersList); //!
+                //todo: ПЕРЕЗАПИСУЄМО змінений dataDevelopersList в Локальне сховище (localStorage)
+                localStorage.setItem("data", JSON.stringify(dataDevelopersList)); //todo: var. 2
+            };
+        };
+    };
+    if (btnAddEditDeveloper.textContent === "Додати") {
+        console.log("Режим ДОДАВАННЯ");
+    };
 
     //todo: ОЧИЩАЄМО поля форми для РЕДАГУВАННЯ/ВИДАЛЕННЯ
     formAddEditDeveloper.reset();

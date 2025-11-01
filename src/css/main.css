@@ -1628,7 +1628,10 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 .form-add-edit-developer__title {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.4rem;
+  text-align: center;
   color: #9c0000;
 }
 .form-add-edit-developer__image-box {
@@ -1652,7 +1655,7 @@ body {
 .form-add-edit-developer button {
   margin: 0 auto 20px;
 }
-.form-add-edit-developer__btn-edit-developer {
+.form-add-edit-developer__btn-add-edit-developer {
   width: 200px;
   height: 50px;
   display: block;

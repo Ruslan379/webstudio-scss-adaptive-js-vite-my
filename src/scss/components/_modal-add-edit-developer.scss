@@ -48,7 +48,11 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     
         &__title {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 1.4rem;
+            text-align: center;
+            // color: crimson;
             color: #9c0000;
         }
 
@@ -83,7 +87,7 @@
         & button {
             margin: 0 auto 20px;
         }
-        &__btn-edit-developer {
+        &__btn-add-edit-developer {
             @include btn(#969600);
         }
         &__btn-delete-developer {

@@ -707,23 +707,36 @@
     <!--? Модальне вікно для Додавання/Редагування КАРТКИ ПОСТА -->
     <div class="backdrop-add-edit-developer is-hidden" data-modal-add-edit-developer>
       <div class="modal-add-edit-developer">
-        <form id="form-add-edit-developer">
-          <h3 id="form-add-edit-developer-title"></h3>
-          <div class="image-developer-box">
+        <form class="form-add-edit-developer">
+          <h3 class="form-add-edit-developer__title"></h3>
+          <div class="form-add-edit-developer__image-box">
             <img 
-              class="image-developer" 
+              class="form-add-edit-developer__image-developer" 
               src="./images/igor-mobile-1x.jpg" 
               alt="developer igor" 
             />
           </div>
-          <input type="text" name="developerName" placeholder="Ім'я" required />
-          <input type="text" name="body" placeholder="Посада" required />
-          <button type="submit" class="btn-edit-developer">Редагувати</button>
-          <button type="button" class="btn-delete-developer" data-btn-delete-developer>Видалити</button>
-          <button type="button" class="btn-cancel-edit-delete-developer" data-btn-cancel-edit-delete-developer>Скасувати</button>
+          <input 
+            class="form-add-edit-developer__input-developer-name" 
+            type="text" 
+            name="developerName" 
+            placeholder="Ім'я" 
+            required 
+          />
+          <input
+            class="form-add-edit-developer__input-developer-position" 
+            type="text" 
+            name="position" 
+            placeholder="Посада" 
+            required 
+          />
+          <button class="form-add-edit-developer__btn-edit-developer" type="submit">Редагувати</button>
+          <button class="form-add-edit-developer__btn-delete-developer" type="button" data-btn-delete-developer>Видалити</button>
+          <button class="form-add-edit-developer__btn-cancel-developer" type="button" data-btn-cancel-developer>Скасувати</button>
         </form>
       </div>
     </div>
+
 
     <!--? Scripts -->
     <!--! Бургер меню в секції "header" -->

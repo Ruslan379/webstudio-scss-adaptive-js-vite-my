@@ -3,15 +3,16 @@ console.error('Додаємо/Редагуємо/Видаляємо розроб
 //! Знаходимо необхідні елементи
 const addDeveloperButton = document.querySelector(".our-developers__add-button");
 const developersList = document.querySelector(".our-developers-list");
-const modalAddEditDeveloper = document.querySelector(".backdrop-add-edit-developer ");
+const modalAddEditDeveloper = document.querySelector("[data-modal-add-edit-developer]");
 
 //! Додаємо слухачів до знайдених елементів
 addDeveloperButton.addEventListener("click", addDeveloper);
 developersList.addEventListener("click", editDeleteDeveloper);
 
 
-//! Функція ВІДКРИТТЯ/ЗАКРИТТЯ модального вікна з формою для ДОДАВАННЯ/РЕДАГУВАННЯ/ВИДАЛЕННЯ
-function toggleModalAddEditDeleteDeveloper() {
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//! Функція ВІДКРИТТЯ/ЗАКРИТТЯ модального вікна з формою для ДОДАВАННЯ/РЕДАГУВАННЯ/+ВИДАЛЕННЯ
+function toggleModalAddEditDeveloper() {
     console.log("ВІДКРИТТЯ/ЗАКРИТТЯ модального вікна з формою для ДОДАВАННЯ/РЕДАГУВАННЯ/ВИДАЛЕННЯ");
     modalAddEditDeveloper.classList.toggle("is-hidden");
     document.body.classList.toggle("no-scroll");
@@ -20,13 +21,13 @@ function toggleModalAddEditDeleteDeveloper() {
 //! Функція ДОДАЄ нових розробників
 function addDeveloper() {
     console.log("ДОДАЄМО нового розробника");
-    //! ВІДКРИИВАЄМО модальне вікно з формою для ДОДАВАННЯ/РЕДАГУВАННЯ
-    toggleModalAddEditDeleteDeveloper();
+    //! ВІДКРИИВАЄМО модальне вікно з формою для ДОДАВАННЯ/РЕДАГУВАННЯ/+ВИДАЛЕННЯ
+    toggleModalAddEditDeveloper();
 
     
 };
 
-//! Функція РЕДАГУЄ/ВИДАЛЯЄ розробників
+//! Функція РЕДАГУЄ/+ВИДАЛЯЄ розробників
 function editDeleteDeveloper(event) {
     if (event.target.nodeName !== "IMG") {
         return;
@@ -38,5 +39,5 @@ function editDeleteDeveloper(event) {
     // console.log("event.target.nodeName", event.target.nodeName);
 
     //! ВІДКРИВАЄМО модальне вікно з формою для РЕДАГУВАННЯ/ВИДАЛЕННЯ
-    toggleModalAddEditDeleteDeveloper();
+    toggleModalAddEditDeveloper();
 };

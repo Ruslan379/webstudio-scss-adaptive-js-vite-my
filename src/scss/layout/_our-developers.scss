@@ -13,8 +13,7 @@
 
   &__add-button {
     @include btn();
-    margin: 0 auto;
-    margin-bottom: 30px;
+    margin: 0 auto 30px;
   }
 
   &-list {

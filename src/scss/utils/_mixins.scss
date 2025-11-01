@@ -26,7 +26,7 @@
     }
 }
 
-@mixin btn {
+@mixin btn($backgroundColor: var(--button-color)) {
     width: 200px;
     height: 50px;
     display: block; //!
@@ -39,7 +39,7 @@
     line-height: 1.87;
     letter-spacing: .06em;
     color: var(--white-color);
-    background-color: var(--button-color);
+    background-color: $backgroundColor;
     cursor: pointer;
 }
 

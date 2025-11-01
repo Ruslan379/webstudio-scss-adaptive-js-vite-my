@@ -176,6 +176,7 @@ console.log("dataDevelopersList (ПРИКЛАД з різними Рішення
 dataDevelopersList = [
     {
         name: "Ігор Дем'яненко",
+        nameId: "IgorDemyanenko",
         position: "Product Designer",
         images: {
             desktop: [
@@ -204,6 +205,7 @@ dataDevelopersList = [
     },
     {
         name: "Ольга Рєпіна",
+        nameId: "OlgaRepina",
         position: "Frontend Developer",
         images: {
             desktop: [
@@ -232,6 +234,7 @@ dataDevelopersList = [
     },
     {
         name: "Микола Тарасов",
+        nameId: "MykolaTarasov",
         position: "Marketing",
         images: {
             desktop: [
@@ -260,6 +263,7 @@ dataDevelopersList = [
     },
     {
         name: "Михайло Єрмаков",
+        nameId: "MykhailoErmakov",
         position: "UI Designer",
         images: {
             desktop: [

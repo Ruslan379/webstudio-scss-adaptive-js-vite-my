@@ -197,7 +197,7 @@ function toggleModalСonfirmDelete() {
     console.log("index:", index); //!
     dataDevelopersList.splice(index, 1);
     console.log("dataDevelopersList (після ВИДАЛЕННЯ):", dataDevelopersList); //!
-    
+
     //todo: ПЕРЕЗАПИСУЄМО змінений dataDevelopersList в Локальне сховище (localStorage)
     localStorage.setItem("data", JSON.stringify(dataDevelopersList));
 
@@ -206,6 +206,11 @@ function toggleModalСonfirmDelete() {
 
     //todo: ЗАКРИВАЄМО модальне вікно з формою для РЕДАГУВАННЯ/ВИДАЛЕННЯ
     toggleModalAddEditDeveloper();
+
+    //todo: Перезавантаження сторінки:
+    window.location.href = window.location.href; //todo: скидає всю програму - начебто користувач натиснув F5
+    // window.location.reload(); //todo: перезавантажує сторінку за допомогою кешу браузера.
+    // window.location.reload(true); //todo: жорстке перезавантаження з обходом кешу (не підтримується у всіх браузерах.)
 };
 
 

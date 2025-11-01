@@ -121,28 +121,69 @@ function editModalAddEditDeveloper(event) {
 
     //todo: var.2 Створюємо новий об'єкт КАРТКИ РОЗРОБНИКА
     const formData = new FormData(formAddEditDeveloper);
-    const newDeveloperCard = Object.fromEntries(formData.entries());
+    const newDeveloperData = Object.fromEntries(formData.entries());
 
-    console.log("newDeveloperCard:", newDeveloperCard); //!
+    console.log("newDeveloperData:", newDeveloperData); //!
 
     //todo: Перевірка на функціонал <ДОДАТИ> або <Редагувати>
+    //todo: ДОДАВАННЯ
+    if (btnAddEditDeveloper.textContent === "Додати") {
+        console.log("Режим ДОДАВАННЯ");
+
+        //todo: Створюємо новий об'єкт КАРТКИ РОЗРОБНИКА
+        const newDeveloperCard = {
+            name: newDeveloperData.developerName,
+            nameId: newDeveloperData.developerName,
+            position: newDeveloperData.developerPosition,
+            images: {
+                desktop: [
+                    new URL("../images/sample-desktop-1x.jpg", import.meta.url).href + " 1x,",
+                    new URL("../images/sample-desktop-2x.jpg", import.meta.url).href + " 2x,",
+                    new URL("../images/sample-desktop-3x.jpg", import.meta.url).href + " 3x"
+                ],
+                tablet: [
+                    new URL("../images/sample-tablet-1x.jpg", import.meta.url).href + " 1x,",
+                    new URL("../images/sample-tablet-2x.jpg", import.meta.url).href + " 2x,",
+                    new URL("../images/sample-tablet-3x.jpg", import.meta.url).href + " 3x"
+                ],
+                mobile: [
+                    new URL("../images/sample-mobile-1x.jpg", import.meta.url).href + " 1x,",
+                    new URL("../images/sample-mobile-2x.jpg", import.meta.url).href + " 2x,",
+                    new URL("../images/sample-mobile-3x.jpg", import.meta.url).href + " 3x"
+                ],
+                default: new URL("../images/sample-mobile-1x.jpg", import.meta.url).href
+            },
+            icons: [
+                new URL("../images/symboldefs.svg#instagram", import.meta.url).href,
+                new URL("../images/symboldefs.svg#twitter", import.meta.url).href,
+                new URL("../images/symboldefs.svg#facebook", import.meta.url).href,
+                new URL("../images/symboldefs.svg#linkedin", import.meta.url).href
+            ]
+        }
+
+        //todo: Додаємо новий об'єкт КАРТКИ РОЗРОБНИКА в Масив Об'єктів: dataDevelopersList
+        dataDevelopersList.push(newDeveloperCard);
+        console.log("dataDevelopersList (після ДОДАВАННЯ нової КАРТКИ РОЗРОБНИКА):", dataDevelopersList); //!
+
+        //todo: ПЕРЕЗАПИСУЄМО змінений dataDevelopersList в Локальне сховище (localStorage)
+        localStorage.setItem("data", JSON.stringify(dataDevelopersList));
+    };
+
+    //todo: РЕДАГУВАННЯ
     if (btnAddEditDeveloper.textContent === "Редагувати") {
         console.log("Режим РЕДАГУВАННЯ");
         //todo: Пошук картки розробника, що редагується та заміна властивостей
         for (let i = 0; i < dataDevelopersList.length; i++) {
             if (editableCard.nameId === dataDevelopersList[i].nameId) {
                 // console.log("editableCard_ДО:", dataDevelopersList[i]);  //todo: Картка розробника, що редагується - ДО
-                dataDevelopersList[i].name = newDeveloperCard.developerName;
-                dataDevelopersList[i].position = newDeveloperCard.developerPosition;
+                dataDevelopersList[i].name = newDeveloperData.developerName;
+                dataDevelopersList[i].position = newDeveloperData.developerPosition;
                 // console.log("editableCard_ПІСЛЯ:", dataDevelopersList[i]);  //todo: Картка розробника, що відредагована - ПІСЛЯ
                 // console.log("dataDevelopersList (після РЕДАГУВАННЯ):", dataDevelopersList); //!
                 //todo: ПЕРЕЗАПИСУЄМО змінений dataDevelopersList в Локальне сховище (localStorage)
-                localStorage.setItem("data", JSON.stringify(dataDevelopersList)); //todo: var. 2
+                localStorage.setItem("data", JSON.stringify(dataDevelopersList)); 
             };
         };
-    };
-    if (btnAddEditDeveloper.textContent === "Додати") {
-        console.log("Режим ДОДАВАННЯ");
     };
 
     //todo: ОЧИЩАЄМО поля форми для РЕДАГУВАННЯ/ВИДАЛЕННЯ
